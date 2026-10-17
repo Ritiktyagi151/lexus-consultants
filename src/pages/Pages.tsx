@@ -371,6 +371,7 @@ export function ContactPage() {
     setSent(true);
   };
   const input = "w-full rounded-xl border border-line bg-cream px-4 py-3 text-sm outline-none focus:border-navy-900 focus:bg-white";
+  const mapEmbedUrl = `${contact.maps.replace("maps.google.com/?q=", "maps.google.com/maps?q=")}&output=embed`;
   return (
     <PageShell>
       <PageHero
@@ -399,6 +400,25 @@ export function ContactPage() {
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#25D366] text-white"><WhatsAppIcon className="h-5 w-5" /></span>
               <span><span className="block text-[11px] font-bold tracking-wider text-mutedfg uppercase">WhatsApp</span><span className="mt-1 block font-semibold text-ink">{contact.mobile}</span></span>
             </a>
+            <div className="overflow-hidden rounded-2xl border border-line bg-cream">
+              <div className="flex items-center justify-between gap-3 px-5 py-4">
+                <div>
+                  <h3 className="font-display font-bold text-navy-900">Find our Delhi office</h3>
+                  <p className="mt-1 text-xs text-mutedfg">Vikas Puri, New Delhi 110018</p>
+                </div>
+                <MapPin className="h-5 w-5 shrink-0 text-crimson-600" aria-hidden="true" />
+              </div>
+              <iframe
+                title="Map to Lexus Consultants head office in Vikas Puri, New Delhi"
+                src={mapEmbedUrl}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-56 w-full border-0 sm:h-64"
+              />
+              <a href={contact.maps} target="_blank" rel="noreferrer" className="block border-t border-line bg-white px-5 py-3 text-xs font-bold text-navy-900 transition hover:text-crimson-600">
+                Open directions in Google Maps <ArrowUpRight className="ml-1 inline h-3.5 w-3.5" />
+              </a>
+            </div>
             <div className="rounded-2xl border border-line bg-cream p-5">
               <h3 className="font-display font-bold text-navy-900">Additional office addresses</h3>
               <p className="mt-1 text-xs leading-relaxed text-mutedfg">Other addresses published on the official Lexus contact page:</p>

@@ -51,7 +51,7 @@ export function PageHero({
         <Breadcrumb items={crumbs} />
         <div className="mt-8 max-w-3xl">
           <Eyebrow>{eyebrow}</Eyebrow>
-          <h1 className="mt-5 font-display text-[2.2rem] leading-[1.12] font-bold tracking-tight text-ink md:text-[3.1rem]">
+          <h1 className="mt-5 font-display text-[1.95rem] leading-[1.12] font-bold tracking-tight text-ink md:text-[3.1rem]">
             <WordReveal text={title} highlight={highlight} />
           </h1>
           <p className="mt-5 max-w-2xl text-[16.5px] leading-relaxed text-mutedfg">{sub}</p>

@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header, Footer, FloatingActions } from "./components/Layout";
 import { ScrollProgress } from "./components/motion";
 import { ScrollToTop } from "./components/Page";
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <>
       <PageLoader />
-      <HashRouter>
+      <BrowserRouter>
         <UpdatesAnnouncement />
         <ScrollToTop />
         <ScrollProgress />
@@ -43,7 +43,7 @@ export default function App() {
         </main>
         <Footer />
         <FloatingActions />
-      </HashRouter>
+      </BrowserRouter>
     </>
   );
 }

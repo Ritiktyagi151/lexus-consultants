@@ -29,7 +29,7 @@ export function About() {
 
           <div className="lg:col-span-7 lg:pt-5">
             <Reveal><Eyebrow>About Lexus Consultants</Eyebrow></Reveal>
-            <h2 className="mt-6 max-w-2xl font-display text-[1.9rem] leading-[1.12] font-semibold tracking-[-0.025em] text-ink md:text-[2.5rem]">
+            <h2 className="mt-6 max-w-2xl font-display text-[1.75rem] leading-[1.12] font-semibold tracking-[-0.025em] text-ink md:text-[2.5rem]">
               <WordReveal text="A three-decade institutional compliance practice." />
             </h2>
             <Reveal delay={0.1}>

@@ -33,7 +33,7 @@ export function Services() {
         style={{ backgroundImage: `url("${heroImg}")` }}
       />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-navy-950/70" />
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHead
           compact
           light
@@ -60,7 +60,7 @@ export function Services() {
         </Reveal>
 
         {/* Services Cards Grid */}
-        <motion.div layout className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <motion.div layout className="mt-6 grid grid-cols-1 gap-3 min-[360px]:grid-cols-2 sm:mt-8 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
           <AnimatePresence mode="popLayout">
             {filtered.map((s, idx) => (
               <motion.div
@@ -73,24 +73,24 @@ export function Services() {
                 className="h-full"
               >
                 <GlowCard className="group h-full rounded-2xl">
-                  <div className="flex h-full flex-col rounded-2xl border border-line/80 bg-white/95 p-5 transition duration-300 group-hover:-translate-y-1 group-hover:border-crimson-500/70 group-hover:shadow-xl group-hover:shadow-navy-900/10 sm:p-5">
+                  <div className="flex h-full flex-col rounded-2xl border border-line/80 bg-white/95 p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-crimson-500/70 group-hover:shadow-xl group-hover:shadow-navy-900/10 sm:p-5">
                     <div className="flex items-start justify-between">
-                      <span className="grid h-11 w-11 place-items-center rounded-xl bg-navy-900 text-gold-400 transition duration-300 group-hover:bg-crimson-600 group-hover:text-white">
-                        <Icon name={s.icon} className="h-5 w-5" />
+                      <span className="grid h-9 w-9 place-items-center rounded-xl bg-navy-900 text-gold-400 transition duration-300 group-hover:bg-crimson-600 group-hover:text-white sm:h-11 sm:w-11">
+                        <Icon name={s.icon} className="h-4 w-4 sm:h-5 sm:w-5" />
                       </span>
-                      <span className="font-display text-xs font-bold text-mutedfg/60">
+                      <span className="font-display text-[10px] font-bold text-mutedfg/60 sm:text-xs">
                         {String(idx + 1).padStart(2, "0")}
                       </span>
                     </div>
 
-                    <span className="mt-3 inline-block text-[10px] font-bold uppercase tracking-wider text-crimson-600">
+                    <span className="mt-2 inline-block text-[9px] font-bold uppercase leading-snug tracking-wide text-crimson-600 sm:mt-3 sm:text-[10px] sm:tracking-wider">
                       {getServiceCategory(s.title)}
                     </span>
-                    <h3 className="mt-1 font-display text-[17px] font-bold leading-snug text-ink">{s.title}</h3>
-                    <p className="mt-2 text-[12.5px] leading-relaxed text-mutedfg">{s.desc}</p>
+                    <h3 className="mt-1 font-display text-sm font-bold leading-snug text-ink sm:text-[17px]">{s.title}</h3>
+                    <p className="mt-2 text-[11px] leading-relaxed text-mutedfg sm:text-[12.5px]">{s.desc}</p>
 
-                    <ul className="mt-4 space-y-1.5 border-t border-line/70 pt-4 text-xs">
-                      {s.points.slice(0, 3).map((p) => (
+                    <ul className="mt-3 space-y-1 border-t border-line/70 pt-3 text-[10px] sm:mt-4 sm:space-y-1.5 sm:pt-4 sm:text-xs">
+                      {s.points.slice(0, 2).map((p) => (
                         <li key={p} className="flex items-start gap-2 text-slate-700">
                           <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-crimson-600" />
                           <span>{p}</span>
@@ -98,15 +98,15 @@ export function Services() {
                       ))}
                     </ul>
 
-                    <div className="mt-auto flex items-center justify-between gap-2 border-t border-line/60 pt-4">
+                    <div className="mt-auto flex flex-col items-start gap-2 border-t border-line/60 pt-3 sm:flex-row sm:items-center sm:justify-between sm:gap-2 sm:pt-4">
                       <button
                         onClick={() => setSelectedService(s)}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-navy-900 transition hover:text-crimson-600"
+                        className="inline-flex items-center gap-1.5 text-[11px] font-bold text-navy-900 transition hover:text-crimson-600 sm:text-xs"
                       >
                         <span>Explore full scope</span>
                         <ArrowUpRight className="h-3.5 w-3.5" />
                       </button>
-                      <Link to="/contact" className="text-xs font-semibold text-mutedfg hover:text-navy-900">
+                      <Link to="/contact" className="text-[11px] font-semibold text-mutedfg hover:text-navy-900 sm:text-xs">
                         Enquire →
                       </Link>
                     </div>

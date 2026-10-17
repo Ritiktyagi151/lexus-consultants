@@ -25,7 +25,7 @@ export function Journey() {
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-36">
               <Reveal><Eyebrow light>Our Practice Evolution</Eyebrow></Reveal>
-              <h2 className="mt-6 max-w-lg font-display text-[1.9rem] leading-[1.12] font-semibold tracking-[-0.025em] md:text-[2.6rem]">
+              <h2 className="mt-6 max-w-lg font-display text-[1.75rem] leading-[1.12] font-semibold tracking-[-0.025em] md:text-[2.6rem]">
                 <WordReveal text="Three decades of dependable legal and labour counsel." />
               </h2>
               <Reveal delay={0.12}>

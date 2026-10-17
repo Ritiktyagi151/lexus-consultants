@@ -75,7 +75,7 @@ export function Header() {
   };
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
-    `relative inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-[12.5px] xl:px-1.5 xl:text-[11px] 2xl:px-2.5 2xl:text-[12.5px] font-semibold transition-all duration-200 whitespace-nowrap ${
+    `relative inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-[12.5px] xl:px-2.5 xl:text-[12px] 2xl:px-3.5 2xl:py-2 2xl:text-[13.5px] min-[1400px]:px-3.5 min-[1400px]:py-2 min-[1400px]:text-[13.5px] font-semibold transition-all duration-200 whitespace-nowrap ${
       isActive ? "text-navy-950 font-bold" : "text-mutedfg hover:text-navy-950 hover:bg-gold-50/70"
     }`;
 
@@ -115,12 +115,12 @@ export function Header() {
         transition={{ duration: 0.3, ease: EASE }}
         className="relative backdrop-blur-md"
       >
-        <div className="mx-auto flex h-[78px] sm:h-[86px] md:h-[98px] xl:h-[84px] 2xl:h-[98px] max-w-[1440px] items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6 2xl:px-8">
+        <div className="mx-auto flex h-[78px] sm:h-[86px] md:h-[98px] xl:h-[84px] 2xl:h-[98px] min-[1400px]:h-[98px] max-w-[1440px] items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6 2xl:px-8">
           {/* Substantially Larger Logo */}
-          <Logo className="block h-12 w-auto max-w-[210px] object-contain transition-transform duration-200 group-hover:scale-[1.03] sm:h-14 sm:max-w-[300px] md:h-[68px] md:max-w-[330px] lg:h-[72px] lg:max-w-[340px] xl:h-14 xl:max-w-[230px] 2xl:h-[72px] 2xl:max-w-[340px]" />
+          <Logo className="block h-12 w-auto max-w-[210px] object-contain transition-transform duration-200 group-hover:scale-[1.03] sm:h-14 sm:max-w-[300px] md:h-[68px] md:max-w-[330px] lg:h-[72px] lg:max-w-[340px] xl:h-14 xl:max-w-[230px] 2xl:h-[72px] 2xl:max-w-[340px] min-[1400px]:h-[72px] min-[1400px]:max-w-[340px]" />
 
           {/* Floating pill navigation (Only Services has hover dropdown) */}
-          <nav className="hidden items-center rounded-full border border-line/80 bg-white/85 p-1 shadow-sm xl:flex" aria-label="Main navigation">
+          <nav className="hidden items-center rounded-full border border-line/80 bg-white/85 p-1 shadow-sm xl:flex xl:p-1.5" aria-label="Main navigation">
             {nav.map((n) => {
               if (n.label === "Services") {
                 return (
@@ -228,7 +228,7 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => { setConsultationSent(false); setConsultationOpen(true); }}
-                className="shimmer relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-navy-900 px-4 py-2.5 text-xs font-semibold text-white shadow-lg shadow-navy-900/15 transition hover:bg-navy-800 2xl:px-6 2xl:py-3 2xl:text-sm"
+                className="shimmer relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-navy-900 px-4 py-2.5 text-xs font-semibold text-white shadow-lg shadow-navy-900/15 transition hover:bg-navy-800 2xl:px-6 2xl:py-3 2xl:text-sm min-[1400px]:px-6 min-[1400px]:py-3 min-[1400px]:text-sm"
               >
                 Book Consultation <ArrowRight className="h-4 w-4" />
               </button>
@@ -435,29 +435,31 @@ export function Footer() {
             Advocates on Record · Labour Courts to High Court
           </div>
         </div>
-        <div className="lg:col-span-2">
-          <h4 className="font-display text-[13px] font-bold tracking-wide text-white uppercase">Practice</h4>
-          <ul className="mt-5 space-y-2.5 text-[14px]">
-            {footerNav.practice.map((l) => (
-              <li key={l.href}><Link to={l.href} className="transition hover:text-gold-300">{l.label}</Link></li>
-            ))}
-            {services.slice(0, 3).map((s) => (
-              <li key={s.slug}><Link to={`/services/${s.slug}`} className="transition hover:text-gold-300">{s.title}</Link></li>
-            ))}
-          </ul>
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:col-span-4">
+          <div className="min-w-0">
+            <h4 className="font-display text-[13px] font-bold tracking-wide text-white uppercase">Practice</h4>
+            <ul className="mt-5 space-y-2.5 text-[14px]">
+              {footerNav.practice.map((l) => (
+                <li key={l.href}><Link to={l.href} className="transition hover:text-gold-300">{l.label}</Link></li>
+              ))}
+              {services.slice(0, 3).map((s) => (
+                <li key={s.slug}><Link to={`/services/${s.slug}`} className="transition hover:text-gold-300">{s.title}</Link></li>
+              ))}
+            </ul>
+          </div>
+          <div className="min-w-0">
+            <h4 className="font-display text-[13px] font-bold tracking-wide text-white uppercase">Resources</h4>
+            <ul className="mt-5 space-y-2.5 text-[14px]">
+              {footerNav.tools.map((l) => (
+                <li key={l.href}><Link to={l.href} className="transition hover:text-gold-300">{l.label}</Link></li>
+              ))}
+              {footerNav.legal.map((l) => (
+                <li key={l.href}><Link to={l.href} className="transition hover:text-gold-300">{l.label}</Link></li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className="lg:col-span-2">
-          <h4 className="font-display text-[13px] font-bold tracking-wide text-white uppercase">Resources</h4>
-          <ul className="mt-5 space-y-2.5 text-[14px]">
-            {footerNav.tools.map((l) => (
-              <li key={l.href}><Link to={l.href} className="transition hover:text-gold-300">{l.label}</Link></li>
-            ))}
-            {footerNav.legal.map((l) => (
-              <li key={l.href}><Link to={l.href} className="transition hover:text-gold-300">{l.label}</Link></li>
-            ))}
-          </ul>
-        </div>
-        <div className="lg:col-span-4">
+        <div className="md:col-span-2 lg:col-span-4">
           <h4 className="font-display text-[13px] font-bold tracking-wide text-white uppercase">Head Office</h4>
           <ul className="mt-5 space-y-3.5 text-[14px]">
             <li className="flex gap-3"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-crimson-400" /><span>{contact.address.join(" ")}</span></li>

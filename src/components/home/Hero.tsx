@@ -37,7 +37,7 @@ export function Hero() {
               Labour law consultants · India-wide support
             </motion.div>
 
-            <h1 className="mt-5 font-display text-[2.35rem] leading-[1.05] font-semibold tracking-[-0.035em] md:text-[3rem] xl:text-[3.5rem]">
+            <h1 className="mt-5 font-display text-[2.1rem] leading-[1.08] font-semibold tracking-[-0.035em] md:text-[3rem] xl:text-[3.5rem]">
               <WordReveal text="Labour law compliance, made clear and manageable." delay={0.15} highlight={["manageable."]} />
             </h1>
 

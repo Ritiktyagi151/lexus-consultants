@@ -51,7 +51,7 @@ export function SectionHead({
         <Eyebrow light={light}>{eyebrow}</Eyebrow>
       </Reveal>
       <h2
-        className={`mt-5 font-display leading-[1.12] font-semibold tracking-tight ${compact ? "text-[1.8rem] md:text-[2.35rem]" : "text-[2.1rem] md:text-[2.85rem]"} ${
+        className={`mt-5 font-display leading-[1.12] font-semibold tracking-tight ${compact ? "text-[1.65rem] md:text-[2.35rem]" : "text-[1.9rem] md:text-[2.85rem]"} ${
           light ? "text-white" : "text-ink"
         }`}
       >
