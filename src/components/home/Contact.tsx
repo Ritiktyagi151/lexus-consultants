@@ -38,7 +38,8 @@ export function Contact() {
               </span>
               <div>
                 <span className="block text-[11px] font-bold uppercase tracking-wider text-mutedfg">Head Office</span>
-                <span className="mt-1 block text-xs font-semibold text-ink">{contact.address.join(" ")}</span>
+                <span className="mt-1 block text-xs font-semibold text-ink">{contact.company}</span>
+                <span className="block text-xs text-mutedfg">{contact.address.join(" ")}</span>
               </div>
             </div>
 

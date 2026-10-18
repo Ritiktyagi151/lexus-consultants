@@ -384,7 +384,7 @@ export function ContactPage() {
         <div className="mx-auto grid max-w-7xl items-start gap-12 px-6 lg:grid-cols-12">
           <div className="space-y-4 lg:col-span-5">
             {[
-              { icon: MapPin, l: "Delhi — Head Office", v: contact.address.join(" "), href: contact.maps, external: true },
+              { icon: MapPin, l: "Delhi — Head Office", v: `${contact.company} · ${contact.address.join(" ")}`, href: contact.maps, external: true },
               { icon: Phone, l: "Call", v: `${contact.phone} · ${contact.mobile}`, href: contact.phoneHref },
               { icon: Mail, l: "Email", v: contact.email, href: `mailto:${contact.email}` },
             ].map((c) => (
