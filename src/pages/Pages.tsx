@@ -14,7 +14,6 @@ import { Item, Stagger, Counter } from "../components/motion";
 import { PageHero, PageShell } from "../components/Page";
 import { WhatsAppIcon } from "../components/WhatsAppIcon";
 import { LegalUpdates } from "../components/home/LegalUpdates";
-import aboutImg from "../assets/about.jpg";
 
 /* ================= ABOUT ================= */
 export function AboutPage() {
@@ -28,7 +27,24 @@ export function AboutPage() {
       />
       <section className="bg-white py-16 md:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
-          <img src={aboutImg} alt="Lexus office" className="aspect-[4/5] w-full rounded-3xl object-cover shadow-2xl" />
+          <div className="relative">
+            <div className="overflow-hidden rounded-3xl border border-navy-900/10 bg-navy-950 shadow-2xl">
+              <img src="/images/office/managing-partner.jpg" alt="Senior Advocate & Legal Counsel at Lexus Consultants" className="aspect-[4/5] w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6">
+                <span className="rounded-full bg-gold-500/20 px-3 py-1 text-xs font-bold tracking-wider text-gold-300 uppercase border border-gold-400/30">
+                  Advocate Leadership
+                </span>
+                <h3 className="mt-2 font-display text-xl font-bold text-white">Three Decades of Industrial & Labour Advocacy</h3>
+                <p className="mt-1 text-xs text-slate-300">Guiding Indian corporate retainers, factory compliance and dispute defense.</p>
+              </div>
+            </div>
+            {/* Inset chamber preview */}
+            <div className="absolute -bottom-6 -right-6 hidden sm:block w-48 overflow-hidden rounded-2xl border-2 border-white bg-white shadow-2xl">
+              <img src="/images/office/executive-chamber.jpg" alt="Consultation chamber" className="aspect-video w-full object-cover" />
+              <div className="p-2.5 text-[10px] font-bold text-navy-900">Vikas Puri Chamber</div>
+            </div>
+          </div>
           <div>
             <h2 className="font-display text-3xl font-bold text-ink">Compliance shouldn't slow your business down.</h2>
             <p className="mt-4 leading-relaxed text-mutedfg">
@@ -47,6 +63,70 @@ export function AboutPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Chambers & Facilities Gallery Section */}
+      <section className="bg-cream py-16 md:py-20 border-y border-line">
+        <div className="mx-auto max-w-7xl px-6">
+          <SectionHead
+            eyebrow="Our Facilities & Chambers"
+            title="A closer look inside our practice environment."
+            sub="Our Delhi head office brings together confidential advisory chambers, a vast statutory precedent library, and dedicated compliance operations under one roof."
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="group overflow-hidden rounded-3xl border border-line bg-white shadow-sm transition hover:shadow-xl">
+              <div className="overflow-hidden bg-navy-950">
+                <img src="/images/office/executive-chamber.jpg" alt="Executive consultation chamber" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+              </div>
+              <div className="p-6">
+                <span className="text-[11px] font-bold tracking-wider text-crimson-600 uppercase">Consultation Suite</span>
+                <h3 className="mt-2 font-display text-lg font-bold text-navy-900">Executive Consultation Chamber</h3>
+                <p className="mt-2 text-sm leading-relaxed text-mutedfg">
+                  Private, confidential chambers for high-stakes corporate discussions, union conciliation strategy, and domestic enquiry hearings.
+                </p>
+              </div>
+            </div>
+
+            <div className="group overflow-hidden rounded-3xl border border-line bg-white shadow-sm transition hover:shadow-xl">
+              <div className="overflow-hidden bg-navy-950">
+                <img src="/images/office/law-library.jpg" alt="Statutory law library" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+              </div>
+              <div className="p-6">
+                <span className="text-[11px] font-bold tracking-wider text-crimson-600 uppercase">Precedent Archive</span>
+                <h3 className="mt-2 font-display text-lg font-bold text-navy-900">Central Law Library</h3>
+                <p className="mt-2 text-sm leading-relaxed text-mutedfg">
+                  Houses over 1,000 treatises and case digests spanning 29 Central laws, the 4 new Labour Codes, and decades of industrial tribunal awards.
+                </p>
+              </div>
+            </div>
+
+            <div className="group overflow-hidden rounded-3xl border border-line bg-white shadow-sm transition hover:shadow-xl">
+              <div className="overflow-hidden bg-navy-950">
+                <img src="/images/office/operations-team.jpg" alt="Compliance operations floor" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+              </div>
+              <div className="p-6">
+                <span className="text-[11px] font-bold tracking-wider text-crimson-600 uppercase">Filing & Payroll Center</span>
+                <h3 className="mt-2 font-display text-lg font-bold text-navy-900">Statutory Operations Team</h3>
+                <p className="mt-2 text-sm leading-relaxed text-mutedfg">
+                  Full-time compliance officers preparing monthly ECR files, PF/ESI challans, Professional Tax returns, and audit documentation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-line bg-white p-6">
+            <div className="flex items-center gap-4">
+              <img src="/images/office/office-corridor.jpg" alt="Lexus reception" className="h-16 w-20 rounded-xl object-cover" />
+              <div>
+                <h4 className="font-display font-bold text-navy-900">Schedule a visit to our Vikas Puri chambers</h4>
+                <p className="text-xs text-mutedfg">Meet our senior advocates and compliance team in person for a confidential case evaluation.</p>
+              </div>
+            </div>
+            <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-navy-900 px-5 py-2.5 text-xs font-bold text-white transition hover:bg-crimson-600">
+              Book a chamber consultation <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
         </div>
       </section>
@@ -400,6 +480,20 @@ export function ContactPage() {
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#25D366] text-white"><WhatsAppIcon className="h-5 w-5" /></span>
               <span><span className="block text-[11px] font-bold tracking-wider text-mutedfg uppercase">WhatsApp</span><span className="mt-1 block font-semibold text-ink">{contact.mobile}</span></span>
             </a>
+            <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
+              <div className="relative">
+                <img src="/images/office/executive-chamber.jpg" alt="Lexus Head Office Consultation Chambers" className="aspect-video w-full object-cover" />
+                <div className="absolute top-3 left-3 rounded-full bg-navy-950/80 px-2.5 py-1 text-[10px] font-bold text-gold-300 uppercase backdrop-blur-md">
+                  Vikas Puri Chambers
+                </div>
+              </div>
+              <div className="p-4">
+                <h4 className="font-display text-sm font-bold text-navy-900">Head Office Consultation Chambers</h4>
+                <p className="mt-1 text-xs leading-relaxed text-mutedfg">
+                  Clients and corporate delegations are welcomed at our Vikas Puri chambers for in-person dispute conciliation, compliance audits, and legal retainers.
+                </p>
+              </div>
+            </div>
             <div className="overflow-hidden rounded-2xl border border-line bg-cream">
               <div className="flex items-center justify-between gap-3 px-5 py-4">
                 <div>
@@ -473,7 +567,69 @@ export function CareersPage() {
         sub="Almost three decades of practice. Real ownership from day one — with the mentorship to grow into a partner."
         crumbs={[{ label: "Careers" }]}
       />
-      <section className="bg-white py-12 md:py-14">
+      {/* Workplace Showcase */}
+      <section className="bg-white py-12 md:py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <SectionHead
+            eyebrow="Workplace & Culture"
+            title="Inside Our Delhi Chambers & Operations Floor"
+            sub="See where our compliance consultants, legal researchers and statutory analysts collaborate every day."
+          />
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="overflow-hidden rounded-2xl border border-line bg-cream shadow-sm">
+              <img src="/images/office/operations-team.jpg" alt="Lexus Operations Workstations" className="aspect-[4/3] w-full object-cover" />
+              <div className="p-5">
+                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Operations Hub</span>
+                <h4 className="mt-1 font-display font-bold text-navy-900">Compliance & Payroll Operations</h4>
+                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Full-time specialists processing monthly returns, statutory registers, and client audit dossiers.</p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-line bg-cream shadow-sm">
+              <img src="/images/office/consultants-desk.jpg" alt="Lexus Advisory & Legal Drafting Team" className="aspect-[4/3] w-full object-cover" />
+              <div className="p-5">
+                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Legal Drafting</span>
+                <h4 className="mt-1 font-display font-bold text-navy-900">Advisory & Case Preparation</h4>
+                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Collaborative work pods reviewing employment agreements, show-cause notices and policy handbooks.</p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-line bg-cream shadow-sm">
+              <img src="/images/office/law-library.jpg" alt="Lexus Central Law Library" className="aspect-[4/3] w-full object-cover" />
+              <div className="p-5">
+                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Precedent Library</span>
+                <h4 className="mt-1 font-display font-bold text-navy-900">Central Statutory Law Library</h4>
+                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Over 1,000 treatises and case digests spanning 29 Central laws, the Labour Codes, and tribunal awards.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 overflow-hidden rounded-3xl border border-line bg-navy-950 p-6 text-white md:p-8">
+            <div className="grid items-center gap-8 lg:grid-cols-2">
+              <div>
+                <span className="text-xs font-bold tracking-wider text-gold-400 uppercase">Office Walkthrough</span>
+                <h3 className="mt-2 font-display text-2xl font-bold text-white">Experience our firm atmosphere</h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                  Watch our office walkthrough tour to see the layout of our client conference chambers, research desks, and compliance operations center.
+                </p>
+                <Link to="/#office-gallery" className="mt-5 inline-flex items-center gap-2 text-xs font-bold text-gold-300 hover:text-white">
+                  View high-definition video walkthroughs <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-black">
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/images/office/executive-chamber.jpg"
+                  className="aspect-video w-full object-cover"
+                >
+                  <source src="/images/office/office-tour-1.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-muted py-12 md:py-14">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl rounded-3xl border border-line bg-cream p-8 text-center md:p-12">
             <h2 className="font-display text-2xl font-bold text-navy-900">Interested in working with Lexus?</h2>
@@ -499,12 +655,31 @@ export function LocationsPage() {
       <section className="bg-white py-12 md:py-14">
         <div className="mx-auto max-w-7xl px-6">
           <div className="rounded-3xl border border-line bg-cream p-8 md:p-12">
-            <div className="flex items-start gap-4">
-              <span className="grid h-12 w-12 place-items-center rounded-xl bg-navy-900 text-gold-400"><Building2 className="h-6 w-6" /></span>
-              <div>
-                <h3 className="font-display text-2xl font-bold text-ink">Head office — Vikas Puri, New Delhi</h3>
-                <p className="mt-2 text-mutedfg">{contact.address.join(" ")}</p>
-                <p className="mt-1 text-sm">{contact.phone} · {contact.mobile} · {contact.email}</p>
+            <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+              <div className="flex items-start gap-4">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-navy-900 text-gold-400"><Building2 className="h-6 w-6" /></span>
+                <div>
+                  <h3 className="font-display text-2xl font-bold text-ink">Head office — Vikas Puri, New Delhi</h3>
+                  <p className="mt-2 text-mutedfg">{contact.address.join(" ")}</p>
+                  <p className="mt-1 text-sm">{contact.phone} · {contact.mobile} · {contact.email}</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    <span className="rounded-md bg-white px-3 py-1 text-xs font-semibold text-navy-950 border border-line">
+                      Executive Chambers
+                    </span>
+                    <span className="rounded-md bg-white px-3 py-1 text-xs font-semibold text-navy-950 border border-line">
+                      Central Law Library
+                    </span>
+                    <span className="rounded-md bg-white px-3 py-1 text-xs font-semibold text-navy-950 border border-line">
+                      Filing Operations Hub
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-md">
+                <img src="/images/office/executive-chamber.jpg" alt="Vikas Puri Head Office consultation chamber" className="aspect-video w-full object-cover" />
+                <div className="p-3 text-center text-xs font-semibold text-navy-900">
+                  Client Consultation Chamber · Vikas Puri HQ
+                </div>
               </div>
             </div>
           </div>

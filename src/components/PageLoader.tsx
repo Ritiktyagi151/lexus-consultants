@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 type LoaderPhase = "visible" | "exiting" | "hidden";
 
-/** Initial document loader. The timeout is a safety net for slow or failed assets. */
+/** Simple, elegant, executive page loader */
 export function PageLoader() {
   const [phase, setPhase] = useState<LoaderPhase>("visible");
 
@@ -17,18 +17,18 @@ export function PageLoader() {
       completed = true;
       window.clearTimeout(fallbackTimer);
 
-      // Keep the opening transition brief while avoiding a flash on fast loads.
-      const remainingMinimum = Math.max(0, 450 - (performance.now() - startedAt));
+      // Snappy and polite: exit smoothly after minimal delay (350ms)
+      const remainingMinimum = Math.max(0, 350 - (performance.now() - startedAt));
       phaseTimer = window.setTimeout(() => {
         setPhase("exiting");
-        phaseTimer = window.setTimeout(() => setPhase("hidden"), 420);
+        phaseTimer = window.setTimeout(() => setPhase("hidden"), 300);
       }, remainingMinimum);
     };
 
     const onWindowLoad = () => finishLoading();
     window.addEventListener("load", onWindowLoad, { once: true });
 
-    fallbackTimer = window.setTimeout(finishLoading, 4000);
+    fallbackTimer = window.setTimeout(finishLoading, 2500);
     if (document.readyState === "complete") finishLoading();
 
     return () => {
@@ -48,28 +48,21 @@ export function PageLoader() {
       aria-live="polite"
     >
       <div className="page-loader__content">
-        <img
-          className="page-loader__logo"
-          src="/images/lexus-logo-light.svg"
-          alt="Lexus Consultants — Legal & Corporate Advisory"
-          fetchPriority="high"
-        />
-
-        <div className="page-loader__wheel" aria-hidden="true">
-          <svg viewBox="0 0 100 100" focusable="false">
-            <circle className="page-loader__outer-ring" cx="50" cy="50" r="43" />
-            <g className="page-loader__spokes">
-              {Array.from({ length: 24 }, (_, index) => (
-                <line key={index} x1="50" y1="15" x2="50" y2="43" transform={`rotate(${index * 15} 50 50)`} />
-              ))}
-            </g>
-            <circle className="page-loader__inner-ring" cx="50" cy="50" r="8" />
-            <circle className="page-loader__hub" cx="50" cy="50" r="2.5" />
-          </svg>
+        {/* Crisp Logo */}
+        <div className="relative">
+          <img
+            className="page-loader__logo"
+            src="/images/lexus-logo-light.svg"
+            alt="Lexus Consultants"
+            fetchPriority="high"
+          />
         </div>
 
+        {/* Minimalist Subtitle */}
         <p className="page-loader__name">LEXUS CONSULTANTS</p>
-        <p className="page-loader__tagline">Legal &amp; Corporate Advisory</p>
+        <p className="page-loader__tagline">Advocates &amp; Industrial Legal Consultants · Estd. 1995</p>
+
+        {/* Clean Hairline Progress Track */}
         <div className="page-loader__track" aria-hidden="true">
           <span />
         </div>

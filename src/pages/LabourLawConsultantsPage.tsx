@@ -117,6 +117,60 @@ export function LabourLawConsultantsPage() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {["In-depth understanding of Central and State labour requirements", "Practical, business-friendly guidance", "Timely and accurate compliance management", "Transparent communication throughout the engagement", "A long-term partnership approach", "Workplaces that are fair, safe and legally sound"].map((item) => <div key={item} className="flex gap-3 rounded-2xl border border-line bg-cream p-5 text-sm leading-relaxed text-ink"><CheckCircle2 className="h-5 w-5 shrink-0 text-crimson-600" />{item}</div>)}
           </div>
+
+          {/* Visual Showcase of Practice, Chambers and Library */}
+          <div className="mt-14 overflow-hidden rounded-3xl border border-line bg-navy-950 p-6 text-white md:p-10">
+            <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+              <div>
+                <span className="text-[11px] font-bold tracking-[0.16em] text-gold-400 uppercase">Our Chambers & Facilities</span>
+                <h3 className="mt-2 font-display text-2xl font-bold text-white md:text-3xl">Where Legal Strategy Meets Hands-on Compliance</h3>
+                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-300">
+                  Lexus operates from dedicated chambers in Vikas Puri, New Delhi, equipped with an extensive statutory law library and an active compliance operations department.
+                </p>
+              </div>
+              <Link to="/#office-gallery" className="inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-500/10 px-5 py-2.5 text-xs font-bold text-gold-300 transition hover:bg-gold-500/20">
+                View all office media & videos <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-navy-900">
+                <img src="/images/office/executive-chamber.jpg" alt="Executive consultation chamber" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+                <div className="p-4">
+                  <span className="text-[10px] font-bold tracking-wider text-gold-400 uppercase">Chambers</span>
+                  <h4 className="mt-1 font-display text-sm font-bold text-white">Consultation Chambers</h4>
+                  <p className="mt-1 text-xs text-slate-300">Confidential dispute discussions, union conciliation & strategic advisory.</p>
+                </div>
+              </div>
+
+              <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-navy-900">
+                <img src="/images/office/managing-partner.jpg" alt="Senior Advocate & Legal Counsel" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+                <div className="p-4">
+                  <span className="text-[10px] font-bold tracking-wider text-gold-400 uppercase">Counsel</span>
+                  <h4 className="mt-1 font-display text-sm font-bold text-white">Advocate Leadership</h4>
+                  <p className="mt-1 text-xs text-slate-300">Over 30 years representing employers in Labour Courts & tribunals.</p>
+                </div>
+              </div>
+
+              <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-navy-900">
+                <img src="/images/office/law-library.jpg" alt="Central statutory law library" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+                <div className="p-4">
+                  <span className="text-[10px] font-bold tracking-wider text-gold-400 uppercase">Archive</span>
+                  <h4 className="mt-1 font-display text-sm font-bold text-white">Statutory Law Library</h4>
+                  <p className="mt-1 text-xs text-slate-300">Precedent treatises, industrial dispute rulings & 4 Labour Codes.</p>
+                </div>
+              </div>
+
+              <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-navy-900">
+                <img src="/images/office/operations-team.jpg" alt="Compliance operations team" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+                <div className="p-4">
+                  <span className="text-[10px] font-bold tracking-wider text-gold-400 uppercase">Operations</span>
+                  <h4 className="mt-1 font-display text-sm font-bold text-white">Compliance Operations</h4>
+                  <p className="mt-1 text-xs text-slate-300">Full-time specialists processing PF, ESI, registers & monthly filings.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
