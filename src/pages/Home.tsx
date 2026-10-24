@@ -8,6 +8,7 @@ import { PracticalSupport } from "../components/home/PracticalSupport";
 import { ViewAllInsightsLink } from "../components/home/ViewAllInsightsLink";
 import { ViewAllFaqsLink } from "../components/home/ViewAllFaqsLink";
 import { LegalUpdates } from "../components/home/LegalUpdates";
+import { OfficeMedia } from "../components/home/OfficeMedia";
 
 export function Home() {
   return (
@@ -15,6 +16,7 @@ export function Home() {
       <Reveal><Hero /></Reveal>
       <Reveal><IndustriesMarquee /></Reveal>
       <Reveal><About /></Reveal>
+      <Reveal><OfficeMedia /></Reveal>
       <Reveal><Journey /></Reveal>
       <Reveal><WhyCompliance /></Reveal>
       <Reveal><Services /></Reveal>
