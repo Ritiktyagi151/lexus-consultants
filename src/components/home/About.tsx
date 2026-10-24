@@ -19,7 +19,7 @@ export function About() {
           <figure className="relative lg:sticky lg:top-28 lg:col-span-5">
             <div className="group relative overflow-hidden rounded-3xl bg-navy-900 shadow-[0_30px_70px_-34px_rgba(9,23,61,0.4)] border border-navy-800">
               <img
-                src="/images/office/managing-partner.jpg"
+                src="/new-img-vid/Confident Advocate in a Law Office.png"
                 alt="Senior Advocate & Principal Consultant at Lexus Consultants"
                 className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
