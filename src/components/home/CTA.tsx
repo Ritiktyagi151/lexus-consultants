@@ -28,7 +28,7 @@ export function CTA() {
         <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto">
           <Link
             to="/contact"
-            className="group shimmer w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-crimson-600 px-8 py-4 text-xs font-bold text-white shadow-xl shadow-crimson-600/30 transition hover:bg-crimson-500"
+            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-crimson-600 px-8 py-4 text-xs font-bold text-white shadow-xl shadow-crimson-600/30 transition hover:bg-crimson-500"
           >
             <span>Book Chamber Consultation</span>
             <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import {
-  Phone, Menu, X, MapPin, Mail, Globe, ArrowUp, Clock, ShieldCheck, ArrowRight, Send,
+  Phone, Menu, X, MapPin, Mail, Globe, Clock, ShieldCheck, ArrowRight, Send,
   ChevronDown
 } from "lucide-react";
 import { contact, nav, services, cities, footerNav } from "../data";
@@ -228,7 +228,7 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => { setConsultationSent(false); setConsultationOpen(true); }}
-                className="shimmer relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-navy-900 px-4 py-2.5 text-xs font-semibold text-white shadow-lg shadow-navy-900/15 transition hover:bg-navy-800 2xl:px-6 2xl:py-3 2xl:text-sm min-[1400px]:px-6 min-[1400px]:py-3 min-[1400px]:text-sm"
+                className="inline-flex items-center gap-2 rounded-full bg-navy-900 px-4 py-2.5 text-xs font-semibold text-white shadow-lg shadow-navy-900/15 transition hover:bg-navy-800 2xl:px-6 2xl:py-3 2xl:text-sm min-[1400px]:px-6 min-[1400px]:py-3 min-[1400px]:text-sm"
               >
                 Book Consultation <ArrowRight className="h-4 w-4" />
               </button>
@@ -505,30 +505,8 @@ export function Footer() {
 }
 
 export function FloatingActions() {
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    const on = () => setShow(window.scrollY > 500);
-    on();
-    window.addEventListener("scroll", on);
-    return () => window.removeEventListener("scroll", on);
-  }, []);
   return (
     <div className="fixed right-5 bottom-5 z-40 flex flex-col items-center gap-3">
-      <AnimatePresence>
-        {show && (
-          <motion.button
-            key="top"
-            aria-label="Back to top"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.5 }}
-            className="grid h-11 w-11 place-items-center rounded-full border border-line bg-white text-navy-900 shadow-xl"
-          >
-            <ArrowUp className="h-5 w-5" />
-          </motion.button>
-        )}
-      </AnimatePresence>
       <motion.a
         href={contact.mobileHref}
         aria-label={`Call Lexus at ${contact.mobile}`}

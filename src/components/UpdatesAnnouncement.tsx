@@ -152,13 +152,14 @@ export function UpdatesAnnouncement() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
-              className="relative my-auto w-full max-w-2xl overflow-hidden rounded-3xl border border-white/20 bg-white shadow-2xl"
+              className="relative my-auto w-full max-w-3xl overflow-hidden rounded-[1.75rem] border border-white/20 bg-white shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Executive Dark Header */}
-              <div className="bg-navy-950 p-6 text-white sm:p-7">
+              <div className="relative overflow-hidden bg-gradient-to-br from-navy-950 via-navy-950 to-[#17243d] p-6 text-white sm:p-8">
+                <div aria-hidden="true" className="pointer-events-none absolute -top-24 right-16 h-48 w-48 rounded-full bg-gold-400/10 blur-3xl" />
                 <div className="flex items-start justify-between gap-4">
-                  <div>
+                  <div className="relative">
                     <div className="flex items-center gap-2">
                       <span className="rounded-full bg-gold-400/20 px-3 py-0.5 text-[10px] font-bold tracking-wider text-gold-300 uppercase border border-gold-400/30">
                         Official Legal Advisory
@@ -175,7 +176,7 @@ export function UpdatesAnnouncement() {
                   <button
                     type="button"
                     onClick={() => setModalOpen(false)}
-                    className="grid h-8 w-8 place-items-center rounded-full bg-white/10 text-white transition hover:bg-crimson-600"
+                    className="relative grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/10 bg-white/10 text-white transition hover:border-crimson-400 hover:bg-crimson-600"
                     aria-label="Close modal"
                   >
                     <X className="h-4 w-4" />
@@ -184,7 +185,7 @@ export function UpdatesAnnouncement() {
 
                 {/* Tab selector for multiple updates */}
                 {legalUpdates.length > 1 && (
-                  <div className="mt-6 flex flex-wrap gap-2 border-t border-white/10 pt-4">
+                  <div className="relative mt-6 flex flex-wrap gap-2 border-t border-white/10 pt-4">
                     {legalUpdates.map((update, idx) => (
                       <button
                         key={update.id}
@@ -203,7 +204,8 @@ export function UpdatesAnnouncement() {
               </div>
 
               {/* Bulletin Content Body */}
-              <div className="p-6 sm:p-8">
+              <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1.35fr_0.85fr] lg:gap-8">
+                <div>
                 <div className="flex flex-wrap items-center justify-between gap-2 border-b border-line pb-4">
                   <span className="rounded-md bg-gold-50 px-2.5 py-1 text-xs font-bold text-navy-900 border border-gold-200">
                     {activeModalUpdate.tag}
@@ -214,24 +216,14 @@ export function UpdatesAnnouncement() {
                   </span>
                 </div>
 
-                <h3 className="mt-4 font-display text-lg font-bold text-navy-950 sm:text-xl">
+                <h3 className="mt-5 font-display text-xl font-bold leading-snug text-navy-950 sm:text-2xl">
                   {activeModalUpdate.title}
                 </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-mutedfg">
+                <p className="mt-3 text-sm leading-relaxed text-mutedfg">
                   {activeModalUpdate.summary}
                 </p>
 
-                {/* Actionable Box */}
-                <div className="mt-5 rounded-2xl border border-crimson-200 bg-crimson-50/60 p-4 sm:p-5">
-                  <h4 className="text-xs font-bold tracking-wider text-crimson-700 uppercase">
-                    Mandatory Employer Action:
-                  </h4>
-                  <p className="mt-1.5 text-xs font-medium leading-relaxed text-navy-950 sm:text-sm">
-                    {activeModalUpdate.employerAction}
-                  </p>
-                </div>
-
-                <div className="mt-5 flex items-center justify-between">
+                <div className="mt-6">
                   <a
                     href={activeModalUpdate.sourceUrl}
                     target="_blank"
@@ -241,6 +233,18 @@ export function UpdatesAnnouncement() {
                     View Official Gazette Release ({activeModalUpdate.sourceLabel}) <ExternalLink className="h-3.5 w-3.5" />
                   </a>
                 </div>
+                </div>
+
+                {/* Employer action panel */}
+                <aside className="self-start rounded-2xl border border-gold-200 bg-gradient-to-br from-gold-50 to-white p-5 sm:p-6">
+                  <div className="mb-4 h-1 w-10 rounded-full bg-gold-500" />
+                  <h4 className="text-xs font-bold tracking-wider text-navy-900 uppercase">
+                    Mandatory Employer Action:
+                  </h4>
+                  <p className="mt-3 text-sm font-medium leading-relaxed text-navy-950">
+                    {activeModalUpdate.employerAction}
+                  </p>
+                </aside>
               </div>
 
               {/* Modal Footer */}

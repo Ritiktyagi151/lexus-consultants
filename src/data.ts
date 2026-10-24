@@ -212,7 +212,7 @@ export const services: Service[] = [
     title: "Fire NOC Consultant",
     slug: "fire-noc",
     category: "Licensing",
-    desc: "Trusted and genuine Fire NOC consultancy â€” get your Fire NOC licence in minimum days.",
+    desc: "Trusted and genuine Fire NOC consultancy — get your Fire NOC licence in minimum days.",
     points: ["Documentation", "Application filing", "Follow-up with authorities"],
   },
   {
@@ -230,6 +230,14 @@ export const services: Service[] = [
     category: "Licensing",
     desc: "Acquire your FSSAI licence officially granted by the Food Safety and Standards Authority of India.",
     points: ["Basic / State / Central licence", "Renewals", "Eating House licence"],
+  },
+  {
+    icon: "ShieldCheck",
+    title: "Labour Codes Implementation",
+    slug: "labour-codes-implementation",
+    category: "Core Compliance",
+    desc: "Prepare your workplace policies, payroll and statutory records for the requirements of India's four Labour Codes.",
+    points: ["Readiness and gap assessment", "Wage structure and payroll review", "Policy and document updates", "Implementation support"],
   },
 ];
 
@@ -309,12 +317,12 @@ export const whyUs = [
   {
     icon: "Award",
     title: "Almost three decades of expertise",
-    desc: "We are Advocates and Management Consultants for Industrial Matters â€” almost three decades old labour law consultancy firm.",
+    desc: "We are Advocates and Management Consultants for Industrial Matters — almost three decades old labour law consultancy firm.",
   },
   {
     icon: "MapPin",
     title: "Pan-India delivery",
-    desc: "Personalised attention, quick and quality service to every client on a Pan India basis â€” Delhi NCR, Bangalore, Mumbai, Chennai and beyond.",
+    desc: "Personalised attention, quick and quality service to every client on a Pan India basis — Delhi NCR, Bangalore, Mumbai, Chennai and beyond.",
   },
   {
     icon: "BadgeIndianRupee",
@@ -331,7 +339,7 @@ export const whyUs = [
 export const process = [
   {
     title: "Assess",
-    desc: "A structured review of your current compliance posture â€” registrations, registers, returns and pending notices.",
+    desc: "A structured review of your current compliance posture — registrations, registers, returns and pending notices.",
   },
   {
     title: "Plan",
@@ -339,7 +347,7 @@ export const process = [
   },
   {
     title: "Execute",
-    desc: "Registrations, monthly payroll, PF/ESI/PT filings, licences and annual returns â€” handled end-to-end.",
+    desc: "Registrations, monthly payroll, PF/ESI/PT filings, licences and annual returns — handled end-to-end.",
   },
   {
     title: "Represent",
@@ -376,11 +384,11 @@ export const cities = [
 export const faqs = [
   {
     q: "What does a labour law consultant do?",
-    a: "A labour law consultant helps businesses comply with applicable labour legislation â€” statutory registrations, PF/ESI/PT filings, maintenance of registers, payroll compliance, licences and representation in disputes and inspections. Lexus Consultants provides all of this end-to-end.",
+    a: "A labour law consultant helps businesses comply with applicable labour legislation — statutory registrations, PF/ESI/PT filings, maintenance of registers, payroll compliance, licences and representation in disputes and inspections. Lexus Consultants provides all of this end-to-end.",
   },
   {
     q: "Which businesses do you work with?",
-    a: "We help businesses of all sizes â€” startups, SMEs, manufacturing units and large corporates â€” across sectors such as Telecom, BPOs, Financial Institutions, IT, Logistics, Hospitals, Schools, Retail, Insurance, Airlines, Restaurants and Automobile.",
+    a: "We help businesses of all sizes — startups, SMEs, manufacturing units and large corporates — across sectors such as Telecom, BPOs, Financial Institutions, IT, Logistics, Hospitals, Schools, Retail, Insurance, Airlines, Restaurants and Automobile.",
   },
   {
     q: "Do you provide services outside Delhi?",
@@ -392,7 +400,7 @@ export const faqs = [
   },
   {
     q: "What happens if my business is non-compliant?",
-    a: "A minor violation or inadvertent delay in complying with a statutory requirement can result not only in levy of damages but also prosecution â€” often of the top executives. Non-compliance can also hurt employee trust and brand credibility.",
+    a: "A minor violation or inadvertent delay in complying with a statutory requirement can result not only in levy of damages but also prosecution — often of the top executives. Non-compliance can also hurt employee trust and brand credibility.",
   },
   {
     q: "Can you handle our complete payroll?",
@@ -490,9 +498,9 @@ export const legalUpdates = [
     id: "epfo-wage-ceiling-2026",
     publishedAt: "2026-09-16",
     effectiveAt: "2026-09-17",
-    tag: "EPFO Â· Central",
-    title: "EPFO mandatory coverage wage ceiling raised to â‚¹25,000",
-    summary: "The Ministry of Labour & Employment announced that the mandatory EPFO coverage ceiling increased from â‚¹15,000 to â‚¹25,000 per month, effective 17 September 2026.",
+    tag: "EPFO · Central",
+    title: "EPFO mandatory coverage wage ceiling raised to ₹25,000",
+    summary: "The Ministry of Labour & Employment announced that the mandatory EPFO coverage ceiling increased from ₹15,000 to ₹25,000 per month, effective 17 September 2026.",
     employerAction: "Review new-joiner eligibility, payroll setup and ECR processes. Confirm membership and contribution treatment against the applicable EPF rules for each employee.",
     sourceLabel: "Ministry of Labour & Employment (PIB)",
     sourceUrl: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2310973&lang=1&reg=3",
@@ -501,7 +509,7 @@ export const legalUpdates = [
     id: "epfo-vishwas-2026",
     publishedAt: "2026-09-03",
     effectiveAt: "2026-06-29",
-    tag: "EPFO Â· Time-bound scheme",
+    tag: "EPFO · Time-bound scheme",
     title: "VISHWAS 2026: eligible EPF damages cases can be reviewed until 28 December",
     summary: "The Ministry says the one-time VISHWAS 2026 scheme covers specified eligible damages and penalty cases, and remains open through 28 December 2026.",
     employerAction: "If an EPF damages matter is pending, check the official scheme conditions, case eligibility and interest payment requirements before applying.",

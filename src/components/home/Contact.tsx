@@ -128,7 +128,7 @@ export function Contact() {
             <div className="mt-6">
               <button
                 type="submit"
-                className="shimmer relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-navy-900 py-3.5 text-xs font-bold text-white shadow-lg shadow-navy-900/15 transition hover:bg-navy-800"
+                className="relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-navy-900 py-3.5 text-xs font-bold text-white shadow-lg shadow-navy-900/15 transition hover:bg-navy-800"
               >
                 <Send className="h-4 w-4 text-gold-400" />
                 <span>Submit Evaluation Request</span>

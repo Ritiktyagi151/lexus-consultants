@@ -4,6 +4,7 @@ import {
   useInView,
   useMotionTemplate,
   useMotionValue,
+  useReducedMotion,
   useScroll,
   useSpring,
   useTransform,
@@ -35,13 +36,14 @@ export function Reveal({
   delay?: number;
   y?: number;
 }) {
+  const prefersReducedMotion = useReducedMotion();
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y, filter: "blur(8px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.75, delay, ease: EASE }}
+      initial={prefersReducedMotion ? false : { opacity: 0, y }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.08 }}
+      transition={{ duration: prefersReducedMotion ? 0 : 0.6, delay: prefersReducedMotion ? 0 : delay, ease: EASE }}
     >
       {children}
     </motion.div>

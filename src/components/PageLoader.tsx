@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 type LoaderPhase = "visible" | "exiting" | "hidden";
 
-/** Simple, elegant, executive page loader */
+/** Minimal first-load screen */
 export function PageLoader() {
   const [phase, setPhase] = useState<LoaderPhase>("visible");
 
@@ -42,29 +42,21 @@ export function PageLoader() {
 
   return (
     <div
-      className={`page-loader${phase === "exiting" ? " page-loader--exiting" : ""}`}
+      className={`fixed inset-0 z-[10000] grid place-items-center overflow-hidden bg-[#081229] text-white transition-[opacity,visibility] duration-300 ${phase === "exiting" ? "pointer-events-none invisible opacity-0" : "opacity-100"}`}
       role="status"
       aria-label="Loading Lexus Consultants"
       aria-live="polite"
     >
-      <div className="page-loader__content">
-        {/* Crisp Logo */}
-        <div className="relative">
-          <img
-            className="page-loader__logo"
-            src="/images/lexus-logo-light.svg"
-            alt="Lexus Consultants"
-            fetchPriority="high"
-          />
-        </div>
+      <div className="relative flex w-[min(88vw,280px)] flex-col items-center text-center">
+        <img
+          className="h-auto w-[min(62vw,210px)] max-h-20 object-contain"
+          src="/images/lexus-logo-light.svg"
+          alt="Lexus Consultants"
+          fetchPriority="high"
+        />
 
-        {/* Minimalist Subtitle */}
-        <p className="page-loader__name">LEXUS CONSULTANTS</p>
-        <p className="page-loader__tagline">Advocates &amp; Industrial Legal Consultants · Estd. 1995</p>
-
-        {/* Clean Hairline Progress Track */}
-        <div className="page-loader__track" aria-hidden="true">
-          <span />
+        <div className="relative mt-[22px] h-0.5 w-[min(48vw,160px)] overflow-hidden rounded-full bg-white/10" aria-hidden="true">
+          <span className="absolute inset-y-0 left-[-45%] w-[45%] rounded-full bg-gradient-to-r from-crimson-600 to-gold-500 motion-safe:animate-loader-glide motion-reduce:animate-none" />
         </div>
         <span className="sr-only">Loading website content</span>
       </div>

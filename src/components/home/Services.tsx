@@ -60,7 +60,7 @@ export function Services() {
         </Reveal>
 
         {/* Services Cards Grid */}
-        <motion.div layout className="mt-6 grid grid-cols-1 gap-3 min-[360px]:grid-cols-2 sm:mt-8 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
+        <motion.div layout className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
           <AnimatePresence mode="popLayout">
             {filtered.map((s, idx) => (
               <motion.div
@@ -73,7 +73,7 @@ export function Services() {
                 className="h-full"
               >
                 <GlowCard className="group h-full rounded-2xl">
-                  <div className="flex h-full flex-col rounded-2xl border border-line/80 bg-white/95 p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-crimson-500/70 group-hover:shadow-xl group-hover:shadow-navy-900/10 sm:p-5">
+                  <div className="flex h-full flex-col rounded-2xl border border-line/80 bg-white/95 p-4 transition duration-300 group-hover:-translate-y-1 group-hover:border-crimson-500/70 group-hover:shadow-xl group-hover:shadow-navy-900/10 sm:p-5">
                     <div className="flex items-start justify-between">
                       <span className="grid h-9 w-9 place-items-center rounded-xl bg-navy-900 text-gold-400 transition duration-300 group-hover:bg-crimson-600 group-hover:text-white sm:h-11 sm:w-11">
                         <Icon name={s.icon} className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -86,10 +86,10 @@ export function Services() {
                     <span className="mt-2 inline-block text-[9px] font-bold uppercase leading-snug tracking-wide text-crimson-600 sm:mt-3 sm:text-[10px] sm:tracking-wider">
                       {getServiceCategory(s.title)}
                     </span>
-                    <h3 className="mt-1 font-display text-sm font-bold leading-snug text-ink sm:text-[17px]">{s.title}</h3>
-                    <p className="mt-2 text-[11px] leading-relaxed text-mutedfg sm:text-[12.5px]">{s.desc}</p>
+                    <h3 className="mt-1 font-display text-base font-bold leading-snug text-ink sm:text-[17px]">{s.title}</h3>
+                    <p className="mt-2 text-xs leading-relaxed text-mutedfg sm:text-[12.5px]">{s.desc}</p>
 
-                    <ul className="mt-3 space-y-1 border-t border-line/70 pt-3 text-[10px] sm:mt-4 sm:space-y-1.5 sm:pt-4 sm:text-xs">
+                    <ul className="mt-3 space-y-1 border-t border-line/70 pt-3 text-[11px] sm:mt-4 sm:space-y-1.5 sm:pt-4 sm:text-xs">
                       {s.points.slice(0, 2).map((p) => (
                         <li key={p} className="flex items-start gap-2 text-slate-700">
                           <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-crimson-600" />

@@ -85,7 +85,7 @@ export function Hero() {
         onMouseLeave={() => setPaused(false)}
         onFocusCapture={() => setPaused(true)}
         onBlurCapture={resumeAfterFocus}
-        className="relative isolate flex min-h-[calc(75vh+100px)] items-center overflow-hidden bg-navy-950 pt-28 pb-10 text-white md:min-h-[calc(80vh+120px)] md:pt-36 md:pb-16"
+        className="relative isolate flex min-h-[calc(75vh+140px)] items-center overflow-hidden bg-navy-950 pt-28 pb-10 text-white md:min-h-[calc(80vh+170px)] md:pt-36 md:pb-16"
       >
         {/* Background photo */}
         <AnimatePresence initial={false}>
@@ -126,23 +126,23 @@ export function Hero() {
                   transition={{ duration: prefersReducedMotion ? 0 : 0.35, ease: EASE }}
                 >
                   {/* Single Clean Tag */}
-                  <div className="inline-flex items-center gap-1.5 rounded-full border border-gold-400/30 bg-gold-500/10 px-3 py-1 text-[11px] font-bold tracking-wider text-gold-300 uppercase backdrop-blur-md">
+                  <div className="inline-flex max-w-full flex-wrap items-center gap-1.5 rounded-full border border-gold-400/30 bg-gold-500/10 px-2.5 py-1 text-[9px] font-bold tracking-wide text-gold-300 uppercase backdrop-blur-md sm:px-3 sm:text-[11px] sm:tracking-wider">
                     <ShieldCheck className="h-3.5 w-3.5 text-gold-400" />
                     {slide.eyebrow}
                   </div>
 
                   {/* Main Display Headline (Punchy, Short) */}
-                  <h1 className="mt-4 font-display text-[2.2rem] leading-[1.08] font-bold tracking-[-0.03em] text-white sm:text-[2.8rem] md:text-[3.2rem]">
+                  <h1 className="mt-3 font-display text-[2rem] leading-[1.08] font-bold tracking-[-0.03em] text-white min-[380px]:text-[2.2rem] sm:text-[2.8rem] md:text-[3.2rem]">
                     {slide.before} <span className="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 to-rose-400">{slide.accent}</span>
                   </h1>
 
                   {/* 1-Line Description */}
-                  <p className="mt-3.5 max-w-xl text-[15px] leading-relaxed text-slate-200 sm:text-base">
+                  <p className="mt-2.5 max-w-xl text-[15px] leading-relaxed text-slate-200 sm:text-base">
                     {slide.description}
                   </p>
 
                   {/* Clean CTAs */}
-                  <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <div className="mt-4 flex flex-wrap items-center gap-3">
                     <Magnetic>
                       <Link
                         to={slide.href}
