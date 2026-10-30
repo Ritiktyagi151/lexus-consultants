@@ -14,8 +14,8 @@ export function AboutPage() {
         sub="Lexus is a professional consultancy helping businesses stay compliant with labour laws and government regulations across India — Advocates and Management Consultants for Industrial Matters."
         crumbs={[{ label: "About" }]}
       />
-      <section className="bg-white py-16 md:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
+      <section className="relative isolate overflow-hidden bg-white py-16 md:py-20">
+        <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
           <div className="relative">
             <div className="overflow-hidden rounded-3xl border border-navy-900/10 bg-navy-950 shadow-2xl">
               <img src="/images/office/law-library.jpg" alt="Statutory Law Library at Lexus Consultants" className="aspect-[4/5] w-full object-cover" />
@@ -34,23 +34,26 @@ export function AboutPage() {
               <div className="p-2.5 text-[10px] font-bold text-navy-900">Vikas Puri Chamber</div>
             </div>
           </div>
-          <div>
-            <h2 className="font-display text-3xl font-bold text-ink">Compliance shouldn't slow your business down.</h2>
-            <p className="mt-4 leading-relaxed text-mutedfg">
-              We help businesses in Delhi, Delhi NCR, Bangalore and across India manage labour law compliance and consultancy. A missed requirement can lead to penalties, legal disputes and reputational damage. Our experienced team helps employers understand their obligations and take practical steps to meet them.
-            </p>
-            <p className="mt-4 leading-relaxed text-mutedfg">
-              We work closely with HR teams, business owners and finance departments, tailoring support to each organisation's industry, workforce size and operating needs. Our services include statutory registrations, payroll compliance, labour law audits, contract labour management, employee welfare and representation.
-            </p>
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              {stats.map((s) => (
-                <div key={s.label} className="rounded-2xl border border-line bg-cream p-5">
-                  <div className="font-display text-3xl font-extrabold text-navy-900">
-                    <Counter to={s.value} suffix={s.suffix} />
+          <div className="relative isolate">
+            <img src="/images/golden-scales-and-gavel-emblem.png" alt="" aria-hidden="true" className="pointer-events-none absolute right-0 top-[35%] z-0 w-[min(82%,28rem)] -translate-y-1/2 object-contain opacity-[0.17]" />
+            <div className="relative z-10">
+              <h2 className="font-display text-3xl font-bold text-ink">Compliance shouldn't slow your business down.</h2>
+              <p className="mt-4 leading-relaxed text-mutedfg">
+                We help businesses in Delhi, Delhi NCR, Bangalore and across India manage labour law compliance and consultancy. A missed requirement can lead to penalties, legal disputes and reputational damage. Our experienced team helps employers understand their obligations and take practical steps to meet them.
+              </p>
+              <p className="mt-4 leading-relaxed text-mutedfg">
+                We work closely with HR teams, business owners and finance departments, tailoring support to each organisation's industry, workforce size and operating needs. Our services include statutory registrations, payroll compliance, labour law audits, contract labour management, employee welfare and representation.
+              </p>
+              <div className="mt-8 grid grid-cols-2 gap-4">
+                {stats.map((s) => (
+                  <div key={s.label} className="rounded-2xl border border-line bg-cream p-5">
+                    <div className="font-display text-3xl font-extrabold text-navy-900">
+                      <Counter to={s.value} suffix={s.suffix} />
+                    </div>
+                    <div className="mt-1 text-sm text-mutedfg">{s.label}</div>
                   </div>
-                  <div className="mt-1 text-sm text-mutedfg">{s.label}</div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>

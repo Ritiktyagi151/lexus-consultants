@@ -76,27 +76,9 @@ export function ContactPage() {
                 Open directions in Google Maps <ArrowUpRight className="ml-1 inline h-3.5 w-3.5" />
               </a>
             </div>
-            <div className="rounded-2xl border border-line bg-cream p-5">
-              <h3 className="font-display font-bold text-navy-900">Additional office addresses</h3>
-              <p className="mt-1 text-xs leading-relaxed text-mutedfg">Other addresses published on the official Lexus contact page:</p>
-              <ul className="mt-4 space-y-4">
-                {offices.filter((office) => !office.primary).map((office) => (
-                  <li key={office.city}>
-                    <span className="block text-xs font-bold text-ink">{office.city}</span>
-                    <span className="mt-1 block text-sm text-mutedfg">{office.address}</span>
-                  </li>
-                ))}
-              </ul>
-
-            </div>
-            <div className="rounded-2xl border border-line bg-cream p-5">
-              <h3 className="font-display font-bold text-navy-900">Connect with Lexus</h3>
-              <div className="mt-3 flex flex-wrap gap-3">
-                {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-navy-900"><Link2 className="h-4 w-4" />{social.label}</a>)}
-              </div>
-            </div>
           </div>
-          <form onSubmit={submit} className="rounded-3xl border border-line p-8 shadow-xl lg:col-span-7">
+          <div className="space-y-4 lg:col-span-7">
+            <form onSubmit={submit} className="rounded-3xl border border-line p-8 shadow-xl">
             <h3 className="max-w-full break-words font-display text-xl leading-tight font-bold text-ink sm:text-2xl">Request a consultation</h3>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <input required name="name" placeholder="Full name *" className={input} />
@@ -113,7 +95,26 @@ export function ContactPage() {
               <Send className="h-4 w-4 text-gold-400" /> Submit evaluation request
             </button>
             {sent && <p className="mt-3 text-center text-sm text-emerald-700">Your email client is ready to send the enquiry.</p>}
-          </form>
+            </form>
+            <div className="rounded-2xl border border-line bg-cream p-5">
+              <h3 className="font-display font-bold text-navy-900">Additional office addresses</h3>
+              <p className="mt-1 text-xs leading-relaxed text-mutedfg">Other addresses published on the official Lexus contact page:</p>
+              <ul className="mt-4 space-y-4">
+                {offices.filter((office) => !office.primary).map((office) => (
+                  <li key={office.city}>
+                    <span className="block text-xs font-bold text-ink">{office.city}</span>
+                    <span className="mt-1 block text-sm text-mutedfg">{office.address}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-line bg-cream p-5">
+              <h3 className="font-display font-bold text-navy-900">Connect with Lexus</h3>
+              <div className="mt-3 flex flex-wrap gap-3">
+                {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-navy-900"><Link2 className="h-4 w-4" />{social.label}</a>)}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </PageShell>

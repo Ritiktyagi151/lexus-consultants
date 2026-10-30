@@ -5,7 +5,7 @@ import {
   Phone, Menu, X, MapPin, Mail, Globe, Clock, ShieldCheck, ArrowRight, Send,
   ChevronDown
 } from "lucide-react";
-import { contact, nav, services, cities, footerNav } from "../data";
+import { contact, nav, services, cities, footerNav, offices } from "../data";
 import { EASE, Magnetic, motion } from "./motion";
 import { Logo } from "./Logo";
 import { Icon } from "./ui";
@@ -422,7 +422,9 @@ export function Header() {
 export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-navy-950 text-slate-300">
-      <div className="grid-lines absolute inset-0 opacity-60" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none overflow-hidden text-center font-display text-[clamp(8rem,24vw,23rem)] font-black leading-none tracking-[-0.08em] text-white/[0.025]">
+        Lexus
+      </div>
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pt-20 pb-14 md:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <Logo light className="block h-12 w-auto max-w-[230px] sm:h-14 sm:max-w-[260px]" />
@@ -479,6 +481,17 @@ export function Footer() {
             ))}
           </div>
         </div>
+      </div>
+      <div className="relative mx-auto max-w-7xl border-t border-white/10 px-6 py-8">
+        <h4 className="font-display text-[13px] font-bold tracking-wide text-white uppercase">Office Locations</h4>
+        <ul className="mt-5 grid gap-x-8 gap-y-5 text-xs leading-relaxed sm:grid-cols-2 lg:grid-cols-3">
+          {offices.filter((office) => !office.primary).map((office) => (
+            <li key={office.city} className="flex items-start gap-3">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-crimson-400" />
+              <span><strong className="block font-semibold text-white">{office.city}</strong><span className="text-slate-400">{office.address}</span></span>
+            </li>
+          ))}
+        </ul>
       </div>
       <div className="relative border-t border-white/10 bg-black/20">
         <div className="mx-auto flex max-w-7xl justify-center px-6 pt-5 text-xs">
