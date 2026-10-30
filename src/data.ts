@@ -1,4 +1,4 @@
-﻿export const contact = {
+export const contact = {
   company: "Lexus Consultants Pvt. Ltd.",
   phone: "+91-11-45110704",
   phoneHref: "tel:+911145110704",
@@ -14,8 +14,11 @@
 export const offices = [
   { city: "Delhi — Head Office", address: "GG-1-23 B, Vikas Puri, New Delhi - 110018", primary: true },
   { city: "Delhi — Okhla Office", address: "C 95, 2nd Floor, Okhla Industrial Area, Phase 1, New Delhi" },
-  { city: "Mumbai Office", address: "Ramakrishna House, Ground Floor, No. 2, Krishna Deep Apartments, Yashwant Nagar, Vakola, Santacruz (East), Mumbai" },
+  { city: "Mumbai Office", address: "No. 501, Building 4, Pocket II, Shivai Chowk, Near Abhyudaya Bank, Kannamwar Nagar 2, Vikhroli (East), Mumbai – 400083" },
   { city: "Chandigarh Office", address: "H. No. 776, Opposite Shiv Thakur Dwara Mandir, Manimajra, Chandigarh" },
+  { city: "Bangalore Office", address: "No. 44/1, 2nd Floor, 2nd Main, Opp. Anand Co-operative Bank, Sheshadripuram, Bangalore – 560020" },
+  { city: "Chennai Office", address: "No. 4/2, GNV Building, 34th Street, 4th Avenue, Ashok Nagar, Chennai – 600083, Tamil Nadu, India" },
+  { city: "Hyderabad Office", address: "19-2-81/B/1 Khaja Pahadi Tadban Bahadurpura, Hyderabad – 500064" },
 ];
 
 export const socialLinks = [
@@ -115,21 +118,7 @@ export const services: Service[] = [
       "Annual Returns and Reports",
     ],
   },
-  {
-    icon: "Wallet",
-    title: "Payroll Management",
-    slug: "payroll-management",
-    category: "Workforce & Payroll",
-    desc: "Outsource payroll processing and statutory deductions with a proactive, professional team.",
-    points: [
-      "Processing Monthly Payroll",
-      "Issue of Payslips",
-      "Bank Transfer",
-      "MIS Reports",
-      "TDS Management (24Q, Form 16)",
-      "Deductions like PF, ESI, PT, etc.",
-    ],
-  },
+
   {
     icon: "Users",
     title: "Manpower Outsourcing",
@@ -161,14 +150,7 @@ export const services: Service[] = [
     desc: "Support principal employers and contractors with registrations, records, wage practices, licence renewals and responsibilities.",
     points: ["Principal employer and contractor registrations", "Statutory registers and records", "Wage compliance support", "Licence renewals", "Guidance on employer responsibilities"],
   },
-  {
-    icon: "Award",
-    title: "Employee Welfare & Benefits Compliance",
-    slug: "employee-welfare-benefits",
-    category: "Core Compliance",
-    desc: "Guidance on employee welfare schemes and statutory benefits, including social security and workplace obligations.",
-    points: ["Provident fund and ESI", "Gratuity and bonus", "Maternity benefits", "Labour welfare funds", "Employee welfare plans"],
-  },
+
   {
     icon: "Scale",
     title: "Labour Disputes & Grievances",

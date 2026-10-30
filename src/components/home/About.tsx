@@ -6,7 +6,7 @@ import { Reveal, WordReveal } from "../motion";
 /* ============================ ABOUT (SafePoint Tempo) ============================ */
 export function About() {
   const principles = [
-    ["30 Years Practice", "Advocates & consultants with deep roots in Delhi NCR and Bangalore."],
+    ["20 Years Practice", "Advocates & consultants with deep roots in Delhi NCR and Bangalore."],
     ["The Compliance Alarm Clock", "Proactive tracking before deadlines become damages or notices."],
     ["Single Accountability Partner", "All registers, challans, audits, and returns handled under one roof."],
     ["Value-Led Retainers", "Clear scope, transparent pricing, and zero hidden costs."],
@@ -26,7 +26,7 @@ export function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/20 to-transparent" />
               
               <div className="absolute top-4 left-4 rounded-full border border-gold-400/40 bg-navy-950/90 px-3 py-1 text-[11px] font-bold tracking-wider text-gold-300 uppercase backdrop-blur-md">
-                Senior Advocate Leadership
+                Director – Lexus Consultants
               </div>
 
               <a
@@ -53,7 +53,7 @@ export function About() {
           <div className="lg:col-span-7 lg:pt-3">
             <Reveal><Eyebrow>About Lexus Consultants</Eyebrow></Reveal>
             <h2 className="mt-4 max-w-2xl font-display text-[1.75rem] leading-[1.12] font-bold tracking-tight text-ink md:text-[2.3rem]">
-              <WordReveal text="Three decades of trusted labour law advocacy." />
+              <WordReveal text="Two decades of trusted labour law advocacy." />
             </h2>
             <Reveal delay={0.1}>
               <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-mutedfg md:text-base">

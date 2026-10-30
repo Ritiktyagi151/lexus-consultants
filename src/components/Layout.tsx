@@ -471,7 +471,7 @@ export function Footer() {
               </span>
             </li>
             <li className="flex gap-3"><Mail className="mt-0.5 h-5 w-5 shrink-0 text-gold-400" /><a href={`mailto:${contact.email}`} className="hover:text-white">{contact.email}</a></li>
-            <li className="flex gap-3"><Globe className="mt-0.5 h-5 w-5 shrink-0 text-gold-400" /><a href="https://lexusconsultants.in" className="hover:text-white">{contact.web}</a></li>
+
           </ul>
           <div className="mt-5 flex flex-wrap gap-1.5">
             {cities.slice(0, 8).map((c) => (

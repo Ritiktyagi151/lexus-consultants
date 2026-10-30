@@ -8,7 +8,7 @@ import { Counter, Magnetic, motion, EASE } from "../motion";
 const heroSlides = [
   {
     id: "legal-chambers",
-    eyebrow: "Advocates & Labour Law Consultants · Estd. 1995",
+    eyebrow: "Advocates & Labour Law Consultants · Estd. 2005",
     before: "Labour Law Compliance,",
     accent: "Built for Enterprise.",
     description: "Advocates protecting employers across India with proactive compliance, court defense, and statutory retainers.",

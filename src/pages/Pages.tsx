@@ -29,13 +29,13 @@ export function AboutPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
           <div className="relative">
             <div className="overflow-hidden rounded-3xl border border-navy-900/10 bg-navy-950 shadow-2xl">
-              <img src="/images/office/managing-partner.jpg" alt="Senior Advocate & Legal Counsel at Lexus Consultants" className="aspect-[4/5] w-full object-cover" />
+              <img src="/images/office/law-library.jpg" alt="Statutory Law Library at Lexus Consultants" className="aspect-[4/5] w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6">
                 <span className="rounded-full bg-gold-500/20 px-3 py-1 text-xs font-bold tracking-wider text-gold-300 uppercase border border-gold-400/30">
-                  Advocate Leadership
+                  Legal Practice
                 </span>
-                <h3 className="mt-2 font-display text-xl font-bold text-white">Three Decades of Industrial & Labour Advocacy</h3>
+                <h3 className="mt-2 font-display text-xl font-bold text-white">Two Decades of Industrial &amp; Labour Advocacy</h3>
                 <p className="mt-1 text-xs text-slate-300">Guiding Indian corporate retainers, factory compliance and dispute defense.</p>
               </div>
             </div>
@@ -148,7 +148,7 @@ export function AboutPage() {
       </section>
       <section className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <SectionHead eyebrow="Our History and Practice" title="Nearly three decades in labour law consultancy." sub="Lexus describes itself as Advocates and Management Consultants for Industrial Matters, combining legal experience with practical compliance support." />
+          <SectionHead eyebrow="Our History and Practice" title="More Than Two Decades in Labour Law Consultancy." sub="Lexus describes itself as Advocates and Management Consultants for Industrial Matters, combining legal experience with practical compliance support." />
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             {journey.map((item) => (
               <article key={item.phase} className="rounded-2xl border border-line bg-cream p-7">

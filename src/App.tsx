@@ -3,10 +3,17 @@ import { Header, Footer, FloatingActions } from "./components/Layout";
 import { ScrollProgress } from "./components/motion";
 import { ScrollToTop } from "./components/Page";
 import { Home } from "./pages/Home";
-import {
-  AboutPage, ServicesPage, ServiceDetailPage, LabourLawsPage, FaqsPage, InsightsPage, InsightDetailPage,
-  ContactPage, CareersPage, LocationsPage, CalendarPage, LegalPage,
-} from "./pages/Pages";
+import { AboutPage } from "./pages/AboutPage";
+import { ServicesPage } from "./pages/ServicesPage";
+import { ServiceDetailPage } from "./pages/ServiceDetailPage";
+import { LabourLawsPage } from "./pages/LabourLawsPage";
+import { FaqsPage } from "./pages/FaqsPage";
+import { InsightsPage, InsightDetailPage } from "./pages/InsightsPage";
+import { ContactPage } from "./pages/ContactPage";
+import { CareersPage } from "./pages/CareersPage";
+import { LocationsPage } from "./pages/LocationsPage";
+import { CalendarPage } from "./pages/CalendarPage";
+import { LegalPage } from "./pages/LegalPage";
 import { LabourLawConsultantsPage } from "./pages/LabourLawConsultantsPage";
 import { CalculatorsPage } from "./pages/CalculatorsPage";
 import { PageLoader } from "./components/PageLoader";
