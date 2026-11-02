@@ -32,3 +32,7 @@ scratch_downloads/
 
 .env
 .env.*
+
+# Source image upload folders (not for deployment)
+public/images/office-new-img/
+public/new-img-vid/
