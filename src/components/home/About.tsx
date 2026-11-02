@@ -25,7 +25,7 @@ export function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/20 to-transparent" />
               
-              <div className="absolute top-4 left-4 rounded-full border border-gold-400/40 bg-navy-950/90 px-3 py-1 text-[11px] font-bold tracking-wider text-gold-300 uppercase backdrop-blur-md">
+              <div className="absolute bottom-4 left-4 rounded-full border border-gold-400/40 bg-navy-950/90 px-2.5 py-1 text-[9px] font-bold tracking-wider text-gold-300 uppercase backdrop-blur-md">
                 Director – Lexus Consultants
               </div>
 
