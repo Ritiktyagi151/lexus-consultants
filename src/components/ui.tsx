@@ -36,6 +36,7 @@ export function SectionHead({
   center = true,
   highlight = [],
   compact = false,
+  mobileCompact = false,
 }: {
   eyebrow: string;
   title: string;
@@ -44,6 +45,7 @@ export function SectionHead({
   center?: boolean;
   highlight?: string[];
   compact?: boolean;
+  mobileCompact?: boolean;
 }) {
   return (
     <div className={`max-w-3xl ${center ? "mx-auto text-center" : ""}`}>
@@ -51,7 +53,7 @@ export function SectionHead({
         <Eyebrow light={light}>{eyebrow}</Eyebrow>
       </Reveal>
       <h2
-        className={`mt-5 font-display leading-[1.12] font-semibold tracking-tight ${compact ? "text-[1.65rem] md:text-[2.35rem]" : "text-[1.9rem] md:text-[2.85rem]"} ${
+        className={`mt-5 font-display leading-[1.12] font-semibold tracking-tight ${mobileCompact ? "text-[1.4rem] md:text-[2.35rem]" : compact ? "text-[1.65rem] md:text-[2.35rem]" : "text-[1.9rem] md:text-[2.85rem]"} ${
           light ? "text-white" : "text-ink"
         }`}
       >
@@ -59,7 +61,7 @@ export function SectionHead({
       </h2>
       {sub && (
         <Reveal delay={0.12}>
-          <p className={`mt-4 text-[16px] leading-relaxed md:text-[17px] ${light ? "text-slate-300" : "text-mutedfg"}`}>
+          <p className={`mt-4 ${mobileCompact ? "text-[14px] md:text-[17px]" : "text-[16px] md:text-[17px]"} leading-relaxed ${light ? "text-slate-300" : "text-mutedfg"}`}>
             {sub}
           </p>
         </Reveal>

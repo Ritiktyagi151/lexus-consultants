@@ -51,11 +51,11 @@ export function About() {
 
           <div className="lg:col-span-7 lg:pt-3">
             <Reveal><Eyebrow>About Lexus Consultants</Eyebrow></Reveal>
-            <h2 className="mt-4 max-w-2xl font-display text-[1.75rem] leading-[1.12] font-bold tracking-tight text-ink md:text-[2.3rem]">
+            <h2 className="mt-4 max-w-2xl font-display text-[1.55rem] leading-[1.12] font-bold tracking-tight text-ink md:text-[2.3rem]">
               <WordReveal text="Two decades of trusted labour law advocacy." />
             </h2>
             <Reveal delay={0.1}>
-              <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-mutedfg md:text-base">
+              <p className="mt-4 max-w-2xl text-[14px] leading-relaxed text-mutedfg md:text-base">
                 We help employers, HR leaders and finance teams stay compliant with Indian labour legislation through hands-on statutory retainers, inspection defense, and tribunal representation.
               </p>
             </Reveal>

@@ -1,6 +1,6 @@
 import { Reveal } from "../components/motion";
 import {
-  Hero, IndustriesMarquee, About, Services, Process, Presence, FAQ, CTA,
+  Hero, IndustriesMarquee, HeroStats, About, Services, Process, Presence, FAQ, CTA,
 } from "../components/Sections";
 
 export function Home() {
@@ -8,6 +8,7 @@ export function Home() {
     <>
       <Reveal><Hero /></Reveal>
       <Reveal><IndustriesMarquee /></Reveal>
+      <Reveal><HeroStats /></Reveal>
       <Reveal><About /></Reveal>
       <Reveal><Services /></Reveal>
       <Reveal><Process /></Reveal>

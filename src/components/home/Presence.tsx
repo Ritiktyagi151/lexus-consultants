@@ -20,14 +20,14 @@ export function Presence() {
                 Personalised attention, quick and quality service to every client on a Pan-India basis at value price.
               </p>
             </div>
-            <div className="flex flex-wrap gap-2 lg:col-span-7">
+            <div className="grid grid-cols-2 gap-2 pr-12 sm:flex sm:flex-wrap sm:pr-0 lg:col-span-7">
               {cities.map((c) => (
                 <span
                   key={c}
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs text-slate-200 transition hover:bg-white hover:text-navy-950"
+                  className="inline-flex min-w-0 items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-2.5 py-2 text-[11px] leading-tight text-slate-200 transition hover:bg-white hover:text-navy-950 sm:px-3.5 sm:py-1.5 sm:text-xs"
                 >
-                  <MapPin className="h-3.5 w-3.5 text-crimson-400" />
-                  <span>{c}</span>
+                  <MapPin className="h-3.5 w-3.5 shrink-0 text-crimson-400" />
+                  <span className="min-w-0">{c}</span>
                 </span>
               ))}
             </div>

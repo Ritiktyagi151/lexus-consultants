@@ -75,8 +75,7 @@ export function Hero() {
   };
 
   return (
-    <>
-      <section
+    <section
         id="home"
         ref={ref}
         aria-roledescription="carousel"
@@ -85,7 +84,7 @@ export function Hero() {
         onMouseLeave={() => setPaused(false)}
         onFocusCapture={() => setPaused(true)}
         onBlurCapture={resumeAfterFocus}
-        className="relative isolate flex min-h-[calc(75vh+140px)] items-center overflow-hidden bg-navy-950 pt-28 pb-10 text-white md:min-h-[calc(80vh+170px)] md:pt-36 md:pb-16"
+        className="relative isolate flex min-h-[500px] items-center overflow-hidden bg-navy-950 pt-24 pb-8 text-white md:min-h-[calc(68vh+120px)] md:pt-36 md:pb-16"
       >
         {/* Background photo */}
         <AnimatePresence initial={false}>
@@ -132,12 +131,12 @@ export function Hero() {
                   </div>
 
                   {/* Main Display Headline (Punchy, Short) */}
-                  <h1 className="mt-3 font-display text-[2rem] leading-[1.08] font-bold tracking-[-0.03em] text-white min-[380px]:text-[2.2rem] sm:text-[2.8rem] md:text-[3.2rem]">
+                  <h1 className="mt-3 font-display text-[1.75rem] leading-[1.08] font-bold tracking-[-0.03em] text-white sm:text-[2.8rem] md:text-[3.2rem]">
                     {slide.before} <span className="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 to-rose-400">{slide.accent}</span>
                   </h1>
 
                   {/* 1-Line Description */}
-                  <p className="mt-2.5 max-w-xl text-[15px] leading-relaxed text-slate-200 sm:text-base">
+                  <p className="mt-2.5 max-w-xl text-[14px] leading-relaxed text-slate-200 sm:text-base">
                     {slide.description}
                   </p>
 
@@ -146,7 +145,7 @@ export function Hero() {
                     <Magnetic>
                       <Link
                         to={slide.href}
-                        className="group inline-flex items-center gap-2 rounded-full bg-crimson-600 px-6 py-3.5 text-xs font-bold text-white shadow-lg shadow-crimson-600/30 transition-all hover:bg-crimson-500 sm:px-7 sm:py-3.5 sm:text-sm"
+                        className="group inline-flex items-center gap-2 rounded-full bg-crimson-600 px-5 py-3 text-[11px] font-bold text-white shadow-lg shadow-crimson-600/30 transition-all hover:bg-crimson-500 sm:px-7 sm:py-3.5 sm:text-sm"
                       >
                         <span>{slide.action}</span>
                         <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
@@ -155,7 +154,7 @@ export function Hero() {
 
                     <a
                       href={contact.phoneHref}
-                      className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3.5 text-xs font-bold text-white backdrop-blur-md transition-all hover:border-gold-400 hover:bg-white/15 sm:text-sm"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-3 text-[11px] font-bold text-white backdrop-blur-md transition-all hover:border-gold-400 hover:bg-white/15 sm:px-5 sm:py-3.5 sm:text-sm"
                     >
                       <Phone className="h-4 w-4 text-gold-400" />
                       <span>{contact.phone}</span>
@@ -187,7 +186,7 @@ export function Hero() {
           </div>
 
           {/* Minimalist Carousel Controls */}
-          <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-4">
+          <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-3 pr-16 sm:mt-8 sm:pt-4 sm:pr-0">
             <div className="flex items-center gap-2">
               {heroSlides.map((item, index) => {
                 const isActive = activeSlide === index;
@@ -231,29 +230,31 @@ export function Hero() {
           </div>
         </motion.div>
       </section>
+  );
+}
 
-      {/* Clean Metrics Bar */}
-      <section className="border-b border-line bg-white shadow-sm">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 px-6 sm:grid-cols-4">
-          {stats.map((s, i) => (
-            <div
-              key={s.label}
-              className={`py-6 px-4 sm:px-6 md:px-8 ${
-                i % 2 === 1 ? "border-l border-line md:border-l-0" : ""
-              } ${i > 0 ? "md:border-l md:border-line" : ""} ${
-                i >= 2 ? "border-t border-line md:border-t-0" : ""
-              }`}
-            >
-              <div className="font-display text-2xl font-extrabold tracking-tight text-navy-950 md:text-3xl">
-                <Counter to={s.value} suffix={s.suffix} />
-              </div>
-              <div className="mt-1 text-xs font-semibold text-mutedfg">
-                {s.label}
-              </div>
+export function HeroStats() {
+  return (
+    <section className="border-b border-line bg-white shadow-sm">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 px-6 sm:grid-cols-4">
+        {stats.map((s, i) => (
+          <div
+            key={s.label}
+            className={`px-4 py-6 sm:px-6 md:px-8 ${
+              i % 2 === 1 ? "border-l border-line md:border-l-0" : ""
+            } ${i > 0 ? "md:border-l md:border-line" : ""} ${
+              i >= 2 ? "border-t border-line md:border-t-0" : ""
+            }`}
+          >
+            <div className="font-display text-2xl font-extrabold tracking-tight text-navy-950 md:text-3xl">
+              <Counter to={s.value} suffix={s.suffix} />
             </div>
-          ))}
-        </div>
-      </section>
-    </>
+            <div className="mt-1 text-xs font-semibold text-mutedfg">
+              {s.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }

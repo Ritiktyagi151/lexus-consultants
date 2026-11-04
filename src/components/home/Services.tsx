@@ -36,6 +36,7 @@ export function Services() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHead
           compact
+          mobileCompact
           light
           eyebrow="Our Services"
           title="Every compliance you need, handled."
@@ -43,7 +44,7 @@ export function Services() {
         />
 
         {/* Category Filter Pills (SafePoint Tempo) */}
-        <Reveal delay={0.1} className="mt-8 flex flex-wrap justify-center gap-2">
+        <Reveal delay={0.1} className="mt-8 hidden flex-wrap justify-center gap-2 sm:flex">
           {serviceCategories.map((c) => (
             <button
               key={c}
