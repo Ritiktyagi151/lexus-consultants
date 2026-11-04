@@ -350,7 +350,7 @@ export function Header() {
               >
                 Book Free Consultation
               </button>
-              <div className="mt-4 pt-3 border-t border-line text-xs text-mutedfg flex justify-between items-center">
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-line pt-3 text-xs text-mutedfg">
                 <a href={contact.phoneHref} className="font-semibold text-navy-900">{contact.phone}</a>
                 <a href={`mailto:${contact.email}`} className="text-mutedfg">{contact.email}</a>
               </div>
@@ -472,7 +472,7 @@ export function Footer() {
                 <a href={contact.mobileHref} className="block text-slate-400 hover:text-white">{contact.mobile}</a>
               </span>
             </li>
-            <li className="flex gap-3"><Mail className="mt-0.5 h-5 w-5 shrink-0 text-gold-400" /><a href={`mailto:${contact.email}`} className="hover:text-white">{contact.email}</a></li>
+            <li className="flex min-w-0 gap-3"><Mail className="mt-0.5 h-5 w-5 shrink-0 text-gold-400" /><a href={`mailto:${contact.email}`} className="break-all hover:text-white">{contact.email}</a></li>
 
           </ul>
           <div className="mt-5 flex flex-wrap gap-1.5">

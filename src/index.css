@@ -55,10 +55,13 @@
   html {
     @apply scroll-smooth antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: clip;
   }
 
   body {
     @apply bg-cream font-sans text-mutedfg;
+    min-width: 320px;
+    overflow-x: clip;
   }
 
   ::selection {

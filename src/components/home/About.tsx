@@ -7,7 +7,7 @@ import { Reveal, WordReveal } from "../motion";
 export function About() {
   const principles = [
     ["20 Years Practice", "Advocates & consultants with deep roots in Delhi NCR and Bangalore."],
-    ["The Compliance Alarm Clock", "Proactive tracking before deadlines become damages or notices."],
+    ["The Compliance Alarm Clock", "Proactive tracking before deadli nes become damages or notices."],
     ["Single Accountability Partner", "All registers, challans, audits, and returns handled under one roof."],
     ["Value-Led Retainers", "Clear scope, transparent pricing, and zero hidden costs."],
   ];
@@ -17,6 +17,9 @@ export function About() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
           <figure className="relative lg:sticky lg:top-28 lg:col-span-5">
+            <div className="mb-3 inline-flex max-w-full rounded-full border border-gold-400/40 bg-navy-950 px-2.5 py-1 text-[9px] font-bold tracking-wider text-gold-300 uppercase sm:absolute sm:top-4 sm:left-4 sm:z-10 sm:mb-0 sm:bg-navy-950/90 sm:backdrop-blur-md">
+              Director – Lexus Consultants
+            </div>
             <div className="group relative overflow-hidden rounded-3xl bg-navy-900 shadow-[0_30px_70px_-34px_rgba(9,23,61,0.4)] border border-navy-800">
               <img
                 src="/new-img-vid/Confident Advocate in a Law Office.png"
@@ -25,10 +28,6 @@ export function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/20 to-transparent" />
               
-              <div className="absolute bottom-4 left-4 rounded-full border border-gold-400/40 bg-navy-950/90 px-2.5 py-1 text-[9px] font-bold tracking-wider text-gold-300 uppercase backdrop-blur-md">
-                Director – Lexus Consultants
-              </div>
-
               <a
                 href="#office-gallery"
                 className="absolute right-4 bottom-4 flex items-center gap-2.5 rounded-2xl border border-white/20 bg-navy-950/90 p-2 pr-3.5 backdrop-blur-md transition hover:border-gold-400 hover:bg-navy-900"
@@ -44,7 +43,7 @@ export function About() {
                 </div>
               </a>
             </div>
-            <figcaption className="mt-4 flex items-center justify-between border-b border-line pb-4 text-[11px] font-semibold tracking-[0.12em] text-mutedfg uppercase">
+            <figcaption className="mt-4 flex flex-col gap-1 border-b border-line pb-4 text-[11px] font-semibold tracking-[0.12em] text-mutedfg uppercase sm:flex-row sm:items-center sm:justify-between">
               <span>Advocates &amp; Industrial Consultants</span>
               <span>New Delhi · Pan India</span>
             </figcaption>
