@@ -38,7 +38,7 @@ export function About() {
                   className="h-10 w-10 rounded-xl object-cover"
                 />
                 <div className="text-left">
-                  <div className="text-[10px] font-bold tracking-wider text-gold-300 uppercase">View Chambers</div>
+                  {/* <div className="text-[10px] font-bold tracking-wider text-gold-300 uppercase">View Chambers</div> */}
                   <div className="text-xs font-semibold text-white">Vikas Puri, New Delhi</div>
                 </div>
               </a>
