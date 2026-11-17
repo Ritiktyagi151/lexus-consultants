@@ -81,7 +81,6 @@ export function Contact() {
           >
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-crimson-600" />
-              <span className="text-xs font-bold uppercase tracking-wider text-crimson-600">Free 15-Min Audit</span>
             </div>
             <h3 className="mt-1 font-display text-2xl font-bold text-ink">Request a Compliance Case Evaluation</h3>
             <p className="mt-1.5 text-xs text-mutedfg">

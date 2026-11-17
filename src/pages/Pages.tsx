@@ -5,7 +5,7 @@ import {
   Search, Building2,
 } from "lucide-react";
 import {
-  contact, offices, socialLinks, services, cities, faqs, extraFaqs, whyUs,
+  contact, offices, socialLinks, services, serviceProcesses, cities, faqs, extraFaqs, whyUs,
   labourCodes, laws, advisory, journey,
   insights, monthlyDues, annualDues, stats,
 } from "../data";
@@ -38,11 +38,6 @@ export function AboutPage() {
                 <h3 className="mt-2 font-display text-xl font-bold text-white">Two Decades of Industrial &amp; Labour Advocacy</h3>
                 <p className="mt-1 text-xs text-slate-300">Guiding Indian corporate retainers, factory compliance and dispute defense.</p>
               </div>
-            </div>
-            {/* Inset chamber preview */}
-            <div className="absolute -bottom-6 -right-6 hidden sm:block w-48 overflow-hidden rounded-2xl border-2 border-white bg-white shadow-2xl">
-              <img src="/images/office/executive-chamber.jpg" alt="Consultation chamber" className="aspect-video w-full object-cover" />
-              <div className="p-2.5 text-[10px] font-bold text-navy-900">Vikas Puri Chamber</div>
             </div>
           </div>
           <div>
@@ -78,7 +73,7 @@ export function AboutPage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div className="group overflow-hidden rounded-3xl border border-line bg-white shadow-sm transition hover:shadow-xl">
               <div className="overflow-hidden bg-navy-950">
-                <img src="/images/office/executive-chamber.jpg" alt="Executive consultation chamber" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+                <img src="/images/office/operations-team.jpg" alt="Executive consultation chamber" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
               </div>
               <div className="p-6">
                 <span className="text-[11px] font-bold tracking-wider text-crimson-600 uppercase">Consultation Suite</span>
@@ -104,7 +99,7 @@ export function AboutPage() {
 
             <div className="group overflow-hidden rounded-3xl border border-line bg-white shadow-sm transition hover:shadow-xl">
               <div className="overflow-hidden bg-navy-950">
-                <img src="/images/office/operations-team.jpg" alt="Compliance operations floor" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+                <img src="/images/office/operations-team-working.jpeg" alt="Compliance team working together in the operations room" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
               </div>
               <div className="p-6">
                 <span className="text-[11px] font-bold tracking-wider text-crimson-600 uppercase">Filing & Payroll Center</span>
@@ -185,12 +180,20 @@ export function ServicesPage() {
     <PageShell>
       <PageHero
         eyebrow="Our Services"
-        title="Every compliance you need, handled."
-        sub="From registration to representation — labour law, payroll, licences and HR under one roof across Delhi NCR, Bangalore and Pan India."
+        title="Compliance Made Simple. Business Made Stronger."
+        sub="Labour law, payroll, licensing and workplace support for businesses across Delhi NCR and Pan India."
         crumbs={[{ label: "Services" }]}
       />
       <section className="bg-white py-12 md:py-14">
         <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-10 rounded-2xl border border-line bg-cream px-6 py-5">
+            <h2 className="font-display text-sm font-bold text-navy-900">Pan India service locations</h2>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {["Andhra Pradesh (AP)", "Pune", "Jaipur", "Punjab"].map((location) => (
+                <span key={location} className="rounded-full border border-line bg-white px-3.5 py-1.5 text-xs font-semibold text-mutedfg">{location}</span>
+              ))}
+            </div>
+          </div>
           <div className="flex flex-wrap justify-center gap-2">
             {cats.map((c) => (
               <button key={c} onClick={() => setCat(c)} className={`rounded-full px-5 py-2.5 text-xs font-bold ${cat === c ? "bg-navy-900 text-white" : "border border-line bg-cream text-mutedfg"}`}>
@@ -244,9 +247,7 @@ export function LabourLawsPage() {
               </article>
             ))}
           </div>
-          <p className="mt-6 text-xs leading-relaxed text-mutedfg">The list below names legislation and subject areas reflected in Lexus’s published service information. Several central enactments have been consolidated into the Labour Codes; applicability and current transition rules should be checked for each workplace and state.</p>
           <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-navy-900 underline">
-            <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2200433&lang=1&reg=3" target="_blank" rel="noreferrer">Government of India: Labour Codes announcement</a>
             <a href="https://lexusconsultants.in/Labour-Laws.html" target="_blank" rel="noreferrer">Lexus official Labour Laws page</a>
           </div>
         </div>
@@ -277,7 +278,7 @@ export function ServiceDetailPage() {
   const { slug } = useParams();
   const s = services.find((x) => x.slug === slug);
   if (!s) return <Navigate to="/services" replace />;
-  const steps = ["Consultation", "Document collection", "Verification", "Application filing", "Authority processing", "Approval", "Post-approval compliance"];
+  const process = serviceProcesses[s.slug];
   return (
     <PageShell>
       <PageHero
@@ -289,9 +290,9 @@ export function ServiceDetailPage() {
       <section className="bg-white py-12 md:py-14">
         <div className="mx-auto grid max-w-7xl items-start gap-12 px-6 lg:grid-cols-12">
           <div className="lg:col-span-8">
-            <h2 className="font-display text-2xl font-bold text-ink">What this engagement covers</h2>
+            <h2 className="font-display text-2xl font-bold text-ink">How we support {s.title.toLowerCase()}</h2>
             <p className="mt-3 text-mutedfg">
-              Lexus Consultants provides this service from its New Delhi base and supports clients in locations including Bangalore, Mumbai, Chennai and Chandigarh. The work is tailored to the applicable requirements and your organisation’s needs.
+              {process.overview}
             </p>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {s.points.map((p) => (
@@ -300,16 +301,29 @@ export function ServiceDetailPage() {
                 </li>
               ))}
             </ul>
-            <h2 className="mt-12 font-display text-2xl font-bold text-ink">How the process works</h2>
+            {s.deliverables && (
+              <div className="mt-10 rounded-2xl border border-line bg-cream p-6 md:p-7">
+                <h2 className="font-display text-xl font-bold text-ink">{s.deliverablesHeading ?? "Engagement deliverables"}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-mutedfg">A clear set of records, review outputs and follow-up actions tailored to this engagement.</p>
+                <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                  {s.deliverables.map((deliverable) => (
+                    <li key={deliverable} className="flex gap-2 text-sm text-ink">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-crimson-600" /> {deliverable}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            <h2 className="mt-12 font-display text-2xl font-bold text-ink">Our {s.title.toLowerCase()} process</h2>
             <ol className="mt-6 space-y-4">
-              {steps.map((st, i) => (
-                <li key={st} className="flex gap-4">
+              {process.steps.map((step, i) => (
+                <li key={step.title} className="flex gap-4">
                   <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-navy-900 font-display text-sm font-bold text-gold-400">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <div className="font-display font-bold text-ink">{st}</div>
-                    <p className="text-sm text-mutedfg">The exact steps depend on the service, applicable requirements and information available for your organisation.</p>
+                    <div className="font-display font-bold text-ink">{step.title}</div>
+                    <p className="text-sm text-mutedfg">{step.description}</p>
                   </div>
                 </li>
               ))}
@@ -320,7 +334,7 @@ export function ServiceDetailPage() {
               <h3 className="font-display text-lg font-bold text-ink">Talk to a consultant</h3>
               <p className="mt-2 text-sm text-mutedfg">Contact our team to discuss your {s.title.toLowerCase()} requirements.</p>
               <Link to="/contact" className="mt-5 flex items-center justify-center gap-2 rounded-full bg-navy-900 py-3 text-sm font-bold text-white">
-                Book compliance audit <ArrowRight className="h-4 w-4" />
+                Discuss this service <ArrowRight className="h-4 w-4" />
               </Link>
               <a href={contact.phoneHref} className="mt-3 flex items-center justify-center gap-2 text-sm font-semibold text-navy-900">
                 <Phone className="h-4 w-4 text-crimson-600" /> {contact.phone}
@@ -577,56 +591,31 @@ export function CareersPage() {
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div className="overflow-hidden rounded-2xl border border-line bg-cream shadow-sm">
-              <img src="/images/office/operations-team.jpg" alt="Lexus Operations Workstations" className="aspect-[4/3] w-full object-cover" />
+              <img src="/images/office/operations-team.jpg" alt="Executive consultation chamber" className="aspect-[4/3] w-full object-cover" />
               <div className="p-5">
-                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Operations Hub</span>
-                <h4 className="mt-1 font-display font-bold text-navy-900">Compliance & Payroll Operations</h4>
-                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Full-time specialists processing monthly returns, statutory registers, and client audit dossiers.</p>
+                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Consultation Suite</span>
+                <h4 className="mt-1 font-display font-bold text-navy-900">Executive Consultation Chamber</h4>
+                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Private, confidential chambers for high-stakes corporate discussions, union conciliation strategy, and domestic enquiry hearings.</p>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-line bg-cream shadow-sm">
-              <img src="/images/office/consultants-desk.jpg" alt="Lexus Advisory & Legal Drafting Team" className="aspect-[4/3] w-full object-cover" />
+              <img src="/images/office/law-library.jpg" alt="Statutory law library" className="aspect-[4/3] w-full object-cover" />
               <div className="p-5">
-                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Legal Drafting</span>
-                <h4 className="mt-1 font-display font-bold text-navy-900">Advisory & Case Preparation</h4>
-                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Collaborative work pods reviewing employment agreements, show-cause notices and policy handbooks.</p>
+                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Precedent Archive</span>
+                <h4 className="mt-1 font-display font-bold text-navy-900">Central Law Library</h4>
+                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Houses over 1,000 treatises and case digests spanning 29 Central laws, the 4 new Labour Codes, and decades of industrial tribunal awards.</p>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-line bg-cream shadow-sm">
-              <img src="/images/office/law-library.jpg" alt="Lexus Central Law Library" className="aspect-[4/3] w-full object-cover" />
+              <img src="/images/office/operations-team-working.jpeg" alt="Compliance team working together in the operations room" className="aspect-[4/3] w-full object-cover" />
               <div className="p-5">
-                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Precedent Library</span>
-                <h4 className="mt-1 font-display font-bold text-navy-900">Central Statutory Law Library</h4>
-                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Over 1,000 treatises and case digests spanning 29 Central laws, the Labour Codes, and tribunal awards.</p>
+                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Filing &amp; Payroll Center</span>
+                <h4 className="mt-1 font-display font-bold text-navy-900">Statutory Operations Team</h4>
+                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Full-time compliance officers preparing monthly ECR files, PF/ESI challans, Professional Tax returns, and audit documentation.</p>
               </div>
             </div>
           </div>
 
-          <div className="mt-12 overflow-hidden rounded-3xl border border-line bg-navy-950 p-6 text-white md:p-8">
-            <div className="grid items-center gap-8 lg:grid-cols-2">
-              <div>
-                <span className="text-xs font-bold tracking-wider text-gold-400 uppercase">Office Walkthrough</span>
-                <h3 className="mt-2 font-display text-2xl font-bold text-white">Experience our firm atmosphere</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-300">
-                  Watch our office walkthrough tour to see the layout of our client conference chambers, research desks, and compliance operations center.
-                </p>
-                <Link to="/#office-gallery" className="mt-5 inline-flex items-center gap-2 text-xs font-bold text-gold-300 hover:text-white">
-                  View high-definition video walkthroughs <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </div>
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-black">
-                <video
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster="/images/office/executive-chamber.jpg"
-                  className="aspect-video w-full object-cover"
-                >
-                  <source src="/images/office/office-tour-1.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
       <section className="bg-muted py-12 md:py-14">

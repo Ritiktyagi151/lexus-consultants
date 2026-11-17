@@ -13,12 +13,20 @@ export function ServicesPage() {
     <PageShell>
       <PageHero
         eyebrow="Our Services"
-        title="Every compliance you need, handled."
-        sub="From registration to representation — labour law, payroll, licences and HR under one roof across Delhi NCR, Bangalore and Pan India."
+        title="Compliance Made Simple. Business Made Stronger."
+        sub="Labour law, payroll, licensing and workplace support for businesses across Delhi NCR and Pan India."
         crumbs={[{ label: "Services" }]}
       />
       <section className="bg-white py-12 md:py-14">
         <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-10 rounded-2xl border border-line bg-cream px-6 py-5">
+            <h2 className="font-display text-sm font-bold text-navy-900">Pan India service locations</h2>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {["Andhra Pradesh (AP)", "Pune", "Jaipur", "Punjab"].map((location) => (
+                <span key={location} className="rounded-full border border-line bg-white px-3.5 py-1.5 text-xs font-semibold text-mutedfg">{location}</span>
+              ))}
+            </div>
+          </div>
           <div className="flex flex-wrap justify-center gap-2">
             {cats.map((c) => (
               <button key={c} onClick={() => setCat(c)} className={`rounded-full px-5 py-2.5 text-xs font-bold ${cat === c ? "bg-navy-900 text-white" : "border border-line bg-cream text-mutedfg"}`}>

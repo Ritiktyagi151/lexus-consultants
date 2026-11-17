@@ -25,10 +25,6 @@ export function LabourLawsPage() {
               </article>
             ))}
           </div>
-          <p className="mt-6 text-xs leading-relaxed text-mutedfg">The list below names legislation and subject areas reflected in Lexus's published service information. Several central enactments have been consolidated into the Labour Codes; applicability and current transition rules should be checked for each workplace and state.</p>
-          <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-navy-900 underline">
-            <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2200433&lang=1&reg=3" target="_blank" rel="noreferrer">Government of India: Labour Codes announcement</a>
-          </div>
         </div>
       </section>
       <section className="bg-muted py-12 md:py-14">

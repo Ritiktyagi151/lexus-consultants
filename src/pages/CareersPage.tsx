@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { contact } from "../data";
 import { SectionHead } from "../components/ui";
@@ -23,53 +22,27 @@ export function CareersPage() {
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div className="overflow-hidden rounded-2xl border border-line bg-cream shadow-sm">
-              <img src="/images/office/operations-team.jpg" alt="Lexus Operations Workstations" className="aspect-[4/3] w-full object-cover" />
+              <img src="/images/office/operations-team.jpg" alt="Executive consultation chamber" className="aspect-[4/3] w-full object-cover" />
               <div className="p-5">
-                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Operations Hub</span>
-                <h4 className="mt-1 font-display font-bold text-navy-900">Compliance & Payroll Operations</h4>
-                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Full-time specialists processing monthly returns, statutory registers, and client audit dossiers.</p>
+                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Consultation Suite</span>
+                <h4 className="mt-1 font-display font-bold text-navy-900">Executive Consultation Chamber</h4>
+                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Private, confidential chambers for high-stakes corporate discussions, union conciliation strategy, and domestic enquiry hearings.</p>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-line bg-cream shadow-sm">
-              <img src="/images/office/consultants-desk.jpg" alt="Lexus Advisory & Legal Drafting Team" className="aspect-[4/3] w-full object-cover" />
+              <img src="/images/office/law-library.jpg" alt="Statutory law library" className="aspect-[4/3] w-full object-cover" />
               <div className="p-5">
-                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Legal Drafting</span>
-                <h4 className="mt-1 font-display font-bold text-navy-900">Advisory & Case Preparation</h4>
-                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Collaborative work pods reviewing employment agreements, show-cause notices and policy handbooks.</p>
+                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Precedent Archive</span>
+                <h4 className="mt-1 font-display font-bold text-navy-900">Central Law Library</h4>
+                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Houses over 1,000 treatises and case digests spanning 29 Central laws, the 4 new Labour Codes, and decades of industrial tribunal awards.</p>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-line bg-cream shadow-sm">
-              <img src="/images/office/law-library.jpg" alt="Lexus Central Law Library" className="aspect-[4/3] w-full object-cover" />
+              <img src="/images/office/operations-team-working.jpeg" alt="Compliance team working together in the operations room" className="aspect-[4/3] w-full object-cover" />
               <div className="p-5">
-                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Precedent Library</span>
-                <h4 className="mt-1 font-display font-bold text-navy-900">Central Statutory Law Library</h4>
-                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Over 1,000 treatises and case digests spanning 29 Central laws, the Labour Codes, and tribunal awards.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 overflow-hidden rounded-3xl border border-line bg-navy-950 p-6 text-white md:p-8">
-            <div className="grid items-center gap-8 lg:grid-cols-2">
-              <div>
-                <span className="text-xs font-bold tracking-wider text-gold-400 uppercase">Office Walkthrough</span>
-                <h3 className="mt-2 font-display text-2xl font-bold text-white">Experience our firm atmosphere</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-300">
-                  Watch our office walkthrough tour to see the layout of our client conference chambers, research desks, and compliance operations center.
-                </p>
-                <Link to="/#office-gallery" className="mt-5 inline-flex items-center gap-2 text-xs font-bold text-gold-300 hover:text-white">
-                  View high-definition video walkthroughs <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </div>
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-black">
-                <video
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster="/images/office/executive-chamber.jpg"
-                  className="aspect-video w-full object-cover"
-                >
-                  <source src="/images/office/office-tour-1.mp4" type="video/mp4" />
-                </video>
+                <span className="text-[10px] font-bold tracking-wider text-crimson-600 uppercase">Filing &amp; Payroll Center</span>
+                <h4 className="mt-1 font-display font-bold text-navy-900">Statutory Operations Team</h4>
+                <p className="mt-1.5 text-xs leading-relaxed text-mutedfg">Full-time compliance officers preparing monthly ECR files, PF/ESI challans, Professional Tax returns, and audit documentation.</p>
               </div>
             </div>
           </div>

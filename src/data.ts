@@ -72,6 +72,8 @@ export type Service = {
   category: string;
   desc: string;
   points: string[];
+  deliverables?: string[];
+  deliverablesHeading?: string;
 };
 
 export const services: Service[] = [
@@ -133,6 +135,54 @@ export const services: Service[] = [
       "Team of Compliance Experts",
       "Control of Overheads",
     ],
+  },
+  {
+    icon: "Calculator",
+    title: "Payroll Management",
+    slug: "payroll-management",
+    category: "Workforce & Payroll",
+    desc: "Monthly payroll administration from validated attendance and salary inputs through net pay, payslips, statutory deductions and payroll records.",
+    points: [
+      "Monthly salary calculations and payroll review",
+      "Attendance, leave, overtime and loss-of-pay reconciliation",
+      "PF, ESI, Professional Tax and Labour Welfare Fund deductions as applicable",
+      "New-joiner, exit and full-and-final settlement processing",
+      "Payroll registers, payslips and bank transfer statements",
+      "TDS return and Form 16 support",
+    ],
+    deliverables: [
+      "Reviewed monthly payroll and employee-wise net pay statement",
+      "Payslips and bank transfer statement for the payroll cycle",
+      "Payroll register and statutory deduction summaries",
+      "PF, ESI, PT and LWF filing or payment support, where applicable",
+      "Full-and-final settlement calculations for exiting employees",
+      "Quarterly TDS return (24Q) and annual Form 16 support",
+    ],
+    deliverablesHeading: "Payroll cycle deliverables",
+  },
+  {
+    icon: "HeartHandshake",
+    title: "Employer Welfare & Benefits",
+    slug: "employee-welfare-benefits",
+    category: "Employee Welfare & Benefits",
+    desc: "Practical support to map employee benefit obligations and administer statutory welfare processes across PF, ESI, gratuity, maternity benefits and workplace welfare.",
+    points: [
+      "Employee and establishment coverage reviews for applicable PF and ESI requirements",
+      "Support with employee enrolment, contribution records and benefit administration workflows",
+      "Gratuity eligibility reviews, calculations and exit-payment documentation",
+      "Maternity benefit eligibility, leave and payment record guidance",
+      "Employees’ compensation incident and claim documentation support",
+      "Workplace welfare requirement reviews and employee benefit policy advice",
+    ],
+    deliverables: [
+      "Location and workforce benefit applicability matrix",
+      "PF and ESI coverage, enrolment and contribution review checklist",
+      "Gratuity eligibility and calculation records for employee exits",
+      "Maternity benefit leave, payment and recordkeeping checklist",
+      "Employees’ compensation incident documentation checklist",
+      "Workplace welfare and benefit policy action plan with owners and review dates",
+    ],
+    deliverablesHeading: "Employee welfare deliverables",
   },
   {
     icon: "ShieldCheck",
@@ -222,6 +272,155 @@ export const services: Service[] = [
     points: ["Readiness and gap assessment", "Wage structure and payroll review", "Policy and document updates", "Implementation support"],
   },
 ];
+
+export type ServiceProcessStep = { title: string; description: string };
+
+export const serviceProcesses: Record<string, { overview: string; steps: ServiceProcessStep[] }> = {
+  "labour-employment-laws": {
+    overview: "We assess the employment issue, applicable laws and available records, then advise on a practical response or represent the organisation before the relevant forum.",
+    steps: [
+      { title: "Define the employment issue", description: "Review the dispute, workplace concern or proposed employment action and identify the people and decisions involved." },
+      { title: "Map the applicable law", description: "Identify the relevant statutes, agreements, policies and procedural requirements for the matter." },
+      { title: "Prepare the response", description: "Develop the advice, documentation, enquiry plan or settlement position suited to the facts." },
+      { title: "Represent and follow through", description: "Support discussions or proceedings and track the actions required to close or manage the matter." },
+    ],
+  },
+  "establishment-compliance": {
+    overview: "For offices, shops and commercial establishments, we map the applicable state requirements, set up registrations and records, and organise recurring filings around the establishment's operations.",
+    steps: [
+      { title: "Map each establishment", description: "Collect location, workforce and business activity details to determine applicable state and central obligations." },
+      { title: "Complete registrations", description: "Prepare and submit applicable establishment registrations, amendments or renewals using verified entity details." },
+      { title: "Set up records and calendar", description: "Identify required registers, notices and returns, then map their owners and due dates." },
+      { title: "Run recurring compliance", description: "Coordinate filing inputs, review records and address inspection or status queries as they arise." },
+    ],
+  },
+  "factory-compliance": {
+    overview: "Factory support starts with the unit's activity, workforce and site details. We map factory and allied obligations, coordinate licence requirements and maintain the reporting cycle.",
+    steps: [
+      { title: "Profile the factory", description: "Review site particulars, manufacturing activity, installed capacity and workforce to scope applicable requirements." },
+      { title: "Plan licences and registrations", description: "List new applications, renewals and amendments, and gather the technical and entity records each requires." },
+      { title: "Organise shop-floor records", description: "Map registers, notices, safety and employment records to responsible teams and operating routines." },
+      { title: "Manage returns and inspections", description: "Track periodic reports and filings, prepare supporting records and coordinate responses to authority visits." },
+    ],
+  },
+  "manpower-outsourcing": {
+    overview: "We clarify the roles and service levels needed, source suitable personnel and coordinate onboarding and ongoing workforce administration with the client.",
+    steps: [
+      { title: "Specify the workforce need", description: "Confirm role profiles, skills, headcount, work location, duration and supervision expectations." },
+      { title: "Source and screen candidates", description: "Identify available candidates against the agreed qualifications, experience and deployment timeline." },
+      { title: "Coordinate deployment", description: "Complete agreed joining documentation and align start dates, reporting lines and site induction." },
+      { title: "Review service delivery", description: "Monitor attendance, replacement needs and client feedback against the agreed staffing arrangement." },
+    ],
+  },
+  "payroll-management": {
+    overview: "We coordinate each payroll cycle from approved employee data through salary calculations, deductions and payroll outputs. The workflow includes review points for HR or finance before pay statements and statutory summaries are finalised.",
+    steps: [
+      { title: "Set up payroll rules and employee records", description: "Confirm salary structures, employee master data, pay dates, attendance inputs and applicable deduction settings." },
+      { title: "Validate monthly changes", description: "Reconcile attendance, leave, overtime, incentives, new joiners, exits and approved salary changes against source records." },
+      { title: "Calculate and review payroll", description: "Compute earnings, loss of pay, statutory deductions and net pay, then share exception and variance checks for approval." },
+      { title: "Release payroll outputs and close the cycle", description: "Prepare payslips, bank transfer statements, payroll registers and agreed statutory filing or payment summaries." },
+    ],
+  },
+  "employee-welfare-benefits": {
+    overview: "We help employers understand which social security and welfare benefits apply to each establishment and employee group, then set up records and review workflows for enrolment, contributions, qualifying events and employee claims.",
+    steps: [
+      { title: "Map benefit coverage", description: "Review locations, workforce categories and establishment details to scope relevant PF, ESI, gratuity, maternity and welfare requirements." },
+      { title: "Check eligibility and records", description: "Compare employee data, service history, wage records and existing benefit processes with the applicable coverage criteria." },
+      { title: "Set up administration workflows", description: "Define how enrolments, contribution records, leave events, claims, gratuity cases and supporting documents move between HR, payroll and employees." },
+      { title: "Review cases and ongoing compliance", description: "Support benefit calculations or documentation for employee events, reconcile recurring records and track agreed corrective actions." },
+    ],
+  },
+  "labour-law-audits": {
+    overview: "A compliance health check compares selected records and practices with applicable obligations, prioritises gaps by urgency and gives the team a practical correction plan.",
+    steps: [
+      { title: "Set the audit scope", description: "Agree the entities, locations, workforce groups, laws and review period to include in the assessment." },
+      { title: "Examine evidence", description: "Review registrations, payroll inputs, returns, registers, policies and supporting payment records." },
+      { title: "Rate findings and exposure", description: "Record missing, inconsistent or overdue items and distinguish urgent corrections from process improvements." },
+      { title: "Issue a corrective action plan", description: "Assign practical actions, owners and target dates, with a follow-up review to track closure." },
+    ],
+  },
+  "contract-labour-management": {
+    overview: "We help principal employers and contractors coordinate licensing, workforce records and wage-related responsibilities for contract labour at each covered site.",
+    steps: [
+      { title: "Map parties and sites", description: "Identify principal employers, contractors, work locations, contract scope and deployed headcount." },
+      { title: "Check licence and registration needs", description: "Review applicable thresholds and site requirements, then plan registrations, licences or renewals." },
+      { title: "Align wage and attendance records", description: "Set expectations for attendance, wage evidence, deductions and supporting contractor submissions." },
+      { title: "Reconcile monthly compliance", description: "Review site records and contractor evidence, flag gaps and document follow-up actions." },
+    ],
+  },
+  "labour-disputes-grievances": {
+    overview: "For employee grievances and industrial disputes, we establish the facts and procedural position, advise on options and support negotiation, enquiry or representation as needed.",
+    steps: [
+      { title: "Receive and classify the matter", description: "Capture the grievance or dispute, key dates, parties, requested outcome and any immediate workplace risks." },
+      { title: "Build the factual record", description: "Review correspondence, employment records, policies and witness information relevant to the issue." },
+      { title: "Choose a resolution route", description: "Assess internal resolution, conciliation, enquiry or formal proceedings and prepare the required position." },
+      { title: "Conduct follow-up", description: "Support meetings or hearings, track commitments and advise on closure or next procedural steps." },
+    ],
+  },
+  "hr-policy-documentation": {
+    overview: "We review how people processes operate, identify the documents needed and draft or revise policies and employment terms for clarity and legal alignment.",
+    steps: [
+      { title: "Understand current practice", description: "Discuss workforce structure, existing policies, approval flows and the employment scenarios to address." },
+      { title: "Identify document gaps", description: "Compare current letters, rules and procedures with operational needs and applicable requirements." },
+      { title: "Draft and review", description: "Prepare tailored policy or agreement language and resolve comments with the designated stakeholders." },
+      { title: "Plan adoption", description: "Provide a rollout checklist covering approvals, employee communication, acknowledgements and version control." },
+    ],
+  },
+  "government-liaison": {
+    overview: "We help organise submissions and follow-up with relevant labour authorities, keeping the organisation informed about document requests, status and next actions.",
+    steps: [
+      { title: "Identify the authority and purpose", description: "Confirm the office, application or notice involved, the issue to resolve and any stated response deadline." },
+      { title: "Assemble a complete submission", description: "Collect the prescribed forms and supporting records, check consistency and prepare a submission index." },
+      { title: "Coordinate filing and follow-up", description: "Submit through the appropriate channel and maintain a log of acknowledgement, queries and status updates." },
+      { title: "Resolve outstanding requests", description: "Coordinate additional information or meetings and document the authority's direction and remaining actions." },
+    ],
+  },
+  "accounting-services": {
+    overview: "Accounting support begins with the client's books and reporting needs. We organise transaction records, reconcile balances and prepare agreed management or financial reports.",
+    steps: [
+      { title: "Agree the accounting scope", description: "Confirm entities, periods, accounting systems, reporting deadlines and the records the client will provide." },
+      { title: "Organise and post transactions", description: "Classify invoices, receipts, expenses and other source records in the agreed bookkeeping structure." },
+      { title: "Reconcile key balances", description: "Compare bank, vendor and customer balances with supporting statements and resolve noted differences." },
+      { title: "Prepare review reports", description: "Compile agreed summaries, highlight unusual movements and list open items for client confirmation." },
+    ],
+  },
+  "fire-noc": {
+    overview: "Fire NOC assistance focuses on the premises, occupancy and applicable fire-safety requirements, followed by preparation of the application and coordination of authority queries or inspection steps.",
+    steps: [
+      { title: "Review premises and requirement", description: "Collect building use, occupancy, layout and existing fire-safety information to clarify the applicable NOC route." },
+      { title: "Compile technical documents", description: "Coordinate available plans, ownership or tenancy records and fire-system details needed for the submission." },
+      { title: "Prepare and submit the application", description: "Complete the relevant application set and track acknowledgement, scrutiny and any inspection request." },
+      { title: "Address observations", description: "Help organise responses or additional evidence requested by the authority and track the resulting status." },
+    ],
+  },
+  "shop-act": {
+    overview: "Shop Act support covers the applicable establishment registration and subsequent changes, based on the state, business details and workforce information supplied.",
+    steps: [
+      { title: "Confirm state and establishment details", description: "Verify the operating address, business activity, commencement date and employee particulars." },
+      { title: "Prepare registration information", description: "Check prescribed forms and supporting documents against the details to be filed." },
+      { title: "File and monitor the application", description: "Submit through the applicable channel and follow up on acknowledgements or clarification requests." },
+      { title: "Record certificate and future changes", description: "Share the issued certificate details and note renewal, amendment or display obligations that apply." },
+    ],
+  },
+  "fssai-license": {
+    overview: "FSSAI licensing support identifies the appropriate licence category for the food business and helps prepare the application, supporting evidence and renewal or amendment requests.",
+    steps: [
+      { title: "Classify the food business", description: "Review business activity, premises, scale and product or service type to identify the likely licence category." },
+      { title: "Gather operator and premises records", description: "Collect identity, address, business constitution and food-safety documents relevant to the application." },
+      { title: "Submit the licence application", description: "Prepare the application particulars, file them through the relevant system and track authority queries." },
+      { title: "Manage issue and renewal dates", description: "Record licence conditions and validity, and plan updates or renewal submissions before expiry." },
+    ],
+  },
+  "labour-codes-implementation": {
+    overview: "We translate the four Labour Codes into a readiness review for the organisation, then help update wage structures, policies, records and operating practices where required.",
+    steps: [
+      { title: "Assess current-state readiness", description: "Map entities, workforce categories, payroll components and existing policies against relevant Code provisions." },
+      { title: "Identify design and data changes", description: "Flag potential wage-definition, benefit, recordkeeping and policy impacts for legal and business review." },
+      { title: "Prepare revised frameworks", description: "Develop recommended payroll, contract, policy and compliance-calendar changes for stakeholder approval." },
+      { title: "Support implementation checks", description: "Coordinate approved updates and review sample records or payroll outputs for consistency." },
+    ],
+  },
+};
 
 export const industries = [
   "Telecom",
@@ -361,6 +560,10 @@ export const cities = [
   "Hyderabad",
   "Bhubaneswar",
   "Lucknow",
+  "Andhra Pradesh (AP)",
+  "Pune",
+  "Jaipur",
+  "Punjab",
 ];
 
 export const faqs = [

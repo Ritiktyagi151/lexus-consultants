@@ -1,13 +1,13 @@
 import type { ReactNode } from "react";
 import {
   Scale, Building2, Factory, Wallet, Users, Calculator, Flame, Store, UtensilsCrossed,
-  Award, MapPin, BadgeIndianRupee, ShieldCheck, Circle, CheckCircle2, ChevronRight, type LucideIcon,
+  Award, MapPin, BadgeIndianRupee, ShieldCheck, HeartHandshake, Circle, CheckCircle2, ChevronRight, type LucideIcon,
 } from "lucide-react";
 import { Reveal, WordReveal } from "./motion";
 
 const map: Record<string, LucideIcon> = {
   Scale, Building2, Factory, Wallet, Users, Calculator, Flame, Store, UtensilsCrossed,
-  Award, MapPin, BadgeIndianRupee, ShieldCheck, CheckCircle2, ChevronRight,
+  Award, MapPin, BadgeIndianRupee, ShieldCheck, HeartHandshake, CheckCircle2, ChevronRight,
 };
 
 export function Icon({ name, className }: { name: string; className?: string }) {

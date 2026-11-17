@@ -112,7 +112,7 @@ export function Hero() {
         <motion.div style={{ y: contentY }} className="mx-auto w-full max-w-7xl px-4 sm:px-6">
           <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
             {/* Left Content Column */}
-            <div className="lg:col-span-8">
+            <div className="lg:col-span-9">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={slide.id}
@@ -164,25 +164,6 @@ export function Hero() {
               </AnimatePresence>
             </div>
 
-            {/* Right Column: Clean Minimalist Preview Card */}
-            <div className="hidden lg:col-span-4 lg:block">
-              <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-navy-900/50 p-2.5 shadow-2xl backdrop-blur-md">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
-                  <img
-                    src={slide.image}
-                    alt={slide.imageAlt}
-                    className="h-full w-full object-cover transition duration-500 hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
-                  <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between">
-                    <div>
-                      <div className="text-[10px] font-bold text-gold-300 uppercase tracking-wider">{slide.facilityLabel}</div>
-                      <div className="text-xs font-bold text-white">{slide.facilitySub}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Minimalist Carousel Controls */}

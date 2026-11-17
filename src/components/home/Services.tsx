@@ -8,10 +8,11 @@ import { Icon, SectionHead } from "../ui";
 import { GlowCard, Reveal, motion, EASE } from "../motion";
 
 /* ============================ SERVICES MODAL & GRID ============================ */
-const serviceCategories = ["All", "Core Compliance", "Workforce & Payroll", "Advisory & Representation", "Licensing", "Accounting"] as const;
+const serviceCategories = ["All", "Core Compliance", "Workforce & Payroll", "Employee Welfare & Benefits", "Advisory & Representation", "Licensing", "Accounting"] as const;
 
 function getServiceCategory(title: string): (typeof serviceCategories)[number] {
-  if (/Audits|Contract Labour|Welfare|Disputes|HR Policy|Authorities/.test(title)) return "Advisory & Representation";
+  if (/Welfare|Benefits/.test(title)) return "Employee Welfare & Benefits";
+  if (/Audits|Contract Labour|Disputes|HR Policy|Authorities/.test(title)) return "Advisory & Representation";
   if (/Labour|Establishment|Factory/.test(title)) return "Core Compliance";
   if (/Payroll|Manpower/.test(title)) return "Workforce & Payroll";
   if (/Fire|Shop|FSSAI/.test(title)) return "Licensing";
@@ -39,7 +40,7 @@ export function Services() {
           mobileCompact
           light
           eyebrow="Our Services"
-          title="Every compliance you need, handled."
+          title="Compliance Made Simple. Business Made Stronger."
           sub="From registrations and payroll to audits, employee matters, licences and representation — a comprehensive range of labour law and business support services."
         />
 

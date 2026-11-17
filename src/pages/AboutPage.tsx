@@ -28,11 +28,6 @@ export function AboutPage() {
                 <p className="mt-1 text-xs text-slate-300">Guiding Indian corporate retainers, factory compliance and dispute defense.</p>
               </div>
             </div>
-            {/* Inset chamber preview */}
-            <div className="absolute -bottom-6 -right-6 hidden sm:block w-48 overflow-hidden rounded-2xl border-2 border-white bg-white shadow-2xl">
-              <img src="/images/office/executive-chamber.jpg" alt="Consultation chamber" className="aspect-video w-full object-cover" />
-              <div className="p-2.5 text-[10px] font-bold text-navy-900">Vikas Puri Chamber</div>
-            </div>
           </div>
           <div className="relative isolate">
             <img src="/images/golden-scales-and-gavel-emblem.png" alt="" aria-hidden="true" className="pointer-events-none absolute right-0 top-[35%] z-0 w-[min(82%,28rem)] -translate-y-1/2 object-contain opacity-[0.17]" />
@@ -70,7 +65,7 @@ export function AboutPage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div className="group overflow-hidden rounded-3xl border border-line bg-white shadow-sm transition hover:shadow-xl">
               <div className="overflow-hidden bg-navy-950">
-                <img src="/images/office/executive-chamber.jpg" alt="Executive consultation chamber" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+                <img src="/images/office/operations-team.jpg" alt="Executive consultation chamber" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
               </div>
               <div className="p-6">
                 <span className="text-[11px] font-bold tracking-wider text-crimson-600 uppercase">Consultation Suite</span>
@@ -96,7 +91,7 @@ export function AboutPage() {
 
             <div className="group overflow-hidden rounded-3xl border border-line bg-white shadow-sm transition hover:shadow-xl">
               <div className="overflow-hidden bg-navy-950">
-                <img src="/images/office/operations-team.jpg" alt="Compliance operations floor" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+                <img src="/images/office/operations-team-working.jpeg" alt="Compliance team working together in the operations room" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
               </div>
               <div className="p-6">
                 <span className="text-[11px] font-bold tracking-wider text-crimson-600 uppercase">Filing & Payroll Center</span>

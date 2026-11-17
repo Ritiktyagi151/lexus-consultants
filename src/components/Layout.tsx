@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import {
-  Phone, Menu, X, MapPin, Mail, Globe, Clock, ShieldCheck, ArrowRight, Send,
+  Phone, Menu, X, MapPin, Mail, Clock, ShieldCheck, ArrowRight, Send,
   ChevronDown
 } from "lucide-react";
 import { contact, nav, services, cities, footerNav, offices } from "../data";
@@ -94,7 +94,7 @@ export function Header() {
           </div>
           <div className="hidden items-center gap-6 xl:flex">
             <span className="inline-flex items-center gap-1.5 text-slate-400">
-              <Clock className="h-3.5 w-3.5 text-gold-400" /> Mon – Sat: 10:00 AM – 6:30 PM
+              <Clock className="h-3.5 w-3.5 text-gold-400" /> Mon – Sat: 10:00 AM – 8:00 PM
             </span>
             <a href={`mailto:${contact.email}`} className="inline-flex items-center gap-1.5 transition hover:text-white">
               <Mail className="h-3.5 w-3.5 text-gold-400" /> {contact.email}
@@ -381,7 +381,6 @@ export function Header() {
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-crimson-600">Free 15-Min Audit</span>
                   <h2 id="consultation-modal-title" className="mt-1 font-display text-2xl font-bold text-navy-950">Book a consultation</h2>
                   <p className="mt-1 text-sm text-mutedfg">Share a few details and our team will get back to you.</p>
                 </div>

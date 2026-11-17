@@ -27,21 +27,6 @@ export function About() {
                 className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/20 to-transparent" />
-              
-              <a
-                href="#office-gallery"
-                className="absolute right-4 bottom-4 flex items-center gap-2.5 rounded-2xl border border-white/20 bg-navy-950/90 p-2 pr-3.5 backdrop-blur-md transition hover:border-gold-400 hover:bg-navy-900"
-              >
-                <img
-                  src="/images/office/executive-chamber.jpg"
-                  alt="Executive Consultation Chamber"
-                  className="h-10 w-10 rounded-xl object-cover"
-                />
-                <div className="text-left">
-                  {/* <div className="text-[10px] font-bold tracking-wider text-gold-300 uppercase">View Chambers</div> */}
-                  <div className="text-xs font-semibold text-white">Vikas Puri, New Delhi</div>
-                </div>
-              </a>
             </div>
             <figcaption className="mt-4 flex flex-col gap-1 border-b border-line pb-4 text-[11px] font-semibold tracking-[0.12em] text-mutedfg uppercase sm:flex-row sm:items-center sm:justify-between">
               <span>Advocates &amp; Industrial Consultants</span>
