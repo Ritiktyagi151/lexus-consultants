@@ -1,6 +1,6 @@
 import { useState, FormEvent } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
-import { contact, services } from "../../data";
+import { contact, offices, services } from "../../data";
 import { SectionHead } from "../ui";
 
 /* ============================ CONTACT ============================ */
@@ -37,7 +37,7 @@ export function Contact() {
                 <MapPin className="h-5 w-5" />
               </span>
               <div>
-                <span className="block text-[11px] font-bold uppercase tracking-wider text-mutedfg">Head Office</span>
+                <span className="block text-[11px] font-bold uppercase tracking-wider text-mutedfg">Delhi — Vikaspuri Office</span>
                 <span className="mt-1 block text-xs font-semibold text-ink">{contact.company}</span>
                 <span className="block text-xs text-mutedfg">{contact.address.join(" ")}</span>
               </div>
@@ -70,6 +70,18 @@ export function Contact() {
                 <span className="block text-[11px] text-mutedfg">Rapid turnaround within 24 business hours</span>
               </div>
             </div>
+          </div>
+
+          <div className="mt-5 rounded-2xl border border-line bg-cream p-5">
+            <h3 className="font-display text-sm font-bold text-navy-900">Other office locations</h3>
+            <ul className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+              {offices.filter((office) => !office.primary).map((office) => (
+                <li key={office.city}>
+                  <span className="block text-xs font-semibold text-ink">{office.city}</span>
+                  <span className="mt-0.5 block text-xs leading-relaxed text-mutedfg">{office.address}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

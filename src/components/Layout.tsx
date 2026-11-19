@@ -185,7 +185,6 @@ export function Header() {
                         >
                           <p className="px-3 pb-2 pt-1 text-[11px] font-bold uppercase tracking-wider text-crimson-600">Payroll &amp; employee benefits</p>
                           {[
-                            { label: "Payroll & Benefits Calculators", detail: "PF, ESIC, professional tax and more", href: "/calculators" },
                             { label: "Payroll Management", detail: "Payroll processing and statutory deductions", href: "/services/payroll-management" },
                             { label: "Employee Welfare & Benefits", detail: "PF, ESI, gratuity and employee welfare", href: "/services/employee-welfare-benefits" },
                           ].map((item) => (
@@ -322,7 +321,6 @@ export function Header() {
                   </div>
                   {payrollMobileOpen && <div className="space-y-1 pb-3 pl-3">
                     {[
-                      { label: "Payroll & Benefits Calculators", href: "/calculators" },
                       { label: "Payroll Management", href: "/services/payroll-management" },
                       { label: "Employee Welfare & Benefits", href: "/services/employee-welfare-benefits" },
                     ].map((item) => <NavLink key={item.href} to={item.href} onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-mutedfg hover:bg-white hover:text-navy-950">{item.label}</NavLink>)}
@@ -484,7 +482,7 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl border-t border-white/10 px-6 py-8">
         <h4 className="font-display text-[13px] font-bold tracking-wide text-white uppercase">Office Locations</h4>
         <ul className="mt-5 grid gap-x-8 gap-y-5 text-xs leading-relaxed sm:grid-cols-2 lg:grid-cols-3">
-          {offices.filter((office) => !office.primary).map((office) => (
+          {offices.map((office) => (
             <li key={office.city} className="flex items-start gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-crimson-400" />
               <span><strong className="block font-semibold text-white">{office.city}</strong><span className="text-slate-400">{office.address}</span></span>

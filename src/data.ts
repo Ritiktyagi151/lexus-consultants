@@ -12,8 +12,7 @@ export const contact = {
 };
 
 export const offices = [
-  { city: "Delhi — Head Office", address: "GG-1-23 B, Vikas Puri, New Delhi - 110018", primary: true },
-  { city: "Delhi — Okhla Office", address: "C 95, 2nd Floor, Okhla Industrial Area, Phase 1, New Delhi" },
+  { city: "Delhi — Vikaspuri Office", address: "GG-1-23 B, Vikas Puri, New Delhi - 110018", primary: true },
   { city: "Mumbai Office", address: "No. 501, Building 4, Pocket II, Shivai Chowk, Near Abhyudaya Bank, Kannamwar Nagar 2, Vikhroli (East), Mumbai – 400083" },
   { city: "Chandigarh Office", address: "H. No. 776, Opposite Shiv Thakur Dwara Mandir, Manimajra, Chandigarh" },
   { city: "Bangalore Office", address: "No. 44/1, 2nd Floor, 2nd Main, Opp. Anand Co-operative Bank, Sheshadripuram, Bangalore – 560020" },
@@ -30,10 +29,9 @@ export const nav = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Labour Laws", href: "/labour-laws" },
-  { label: "Payroll & Benefits", href: "/calculators" },
+  { label: "Payroll & Benefits", href: "/services/payroll-management" },
   { label: "Locations", href: "/locations" },
   { label: "Calendar", href: "/calendar" },
-  { label: "Insights", href: "/insights" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
@@ -48,8 +46,7 @@ export const footerNav = {
   ],
   tools: [
     { label: "Compliance Planning", href: "/calendar" },
-    { label: "Payroll & Benefits", href: "/calculators" },
-    { label: "Insights", href: "/insights" },
+    { label: "Payroll Management", href: "/services/payroll-management" },
     { label: "FAQs", href: "/faqs" },
   ],
   legal: [
@@ -564,6 +561,9 @@ export const cities = [
   "Pune",
   "Jaipur",
   "Punjab",
+  "Madhya Pradesh",
+  "Goa",
+  "Haryana",
 ];
 
 export const faqs = [

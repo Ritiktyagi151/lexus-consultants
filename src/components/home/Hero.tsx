@@ -39,7 +39,7 @@ const heroSlides = [
     accent: "Handled End-to-End.",
     description: "Timely monthly ECR returns, PF/ESI challans, registers, and licensing managed by dedicated specialists.",
     action: "Explore Payroll",
-    href: "/calculators",
+    href: "/services/payroll-management",
     image: "/images/office/operations-team.jpg",
     imageAlt: "Compliance operations floor processing statutory filings",
     facilityLabel: "Operations Center",
@@ -112,7 +112,7 @@ export function Hero() {
         <motion.div style={{ y: contentY }} className="mx-auto w-full max-w-7xl px-4 sm:px-6">
           <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
             {/* Left Content Column */}
-            <div className="lg:col-span-9">
+            <div className="lg:col-span-8">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={slide.id}
@@ -162,6 +162,20 @@ export function Hero() {
                   </div>
                 </motion.div>
               </AnimatePresence>
+            </div>
+
+            <div className="relative hidden min-h-[300px] items-center justify-center lg:col-span-4 lg:flex">
+              <div className="absolute right-2 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full border border-gold-300/20 bg-gold-300/[0.04] shadow-[0_0_90px_rgba(226,180,87,0.12)]" />
+              <div className="absolute right-8 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full border border-white/10" />
+              <img
+                src="/images/golden-scales-and-gavel-emblem.png"
+                alt="Golden scales of justice and a judge's gavel"
+                className="relative z-10 w-full max-w-[360px] drop-shadow-[0_18px_35px_rgba(0,0,0,0.45)]"
+              />
+              <div className="absolute bottom-5 right-0 z-20 rounded-xl border border-white/15 bg-navy-950/75 px-4 py-3 shadow-xl backdrop-blur-md">
+                <p className="text-[10px] font-bold tracking-[0.18em] text-gold-300 uppercase">Trusted legal counsel</p>
+                <p className="mt-1 text-xs text-slate-200">Advocacy grounded in experience</p>
+              </div>
             </div>
 
           </div>
