@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type FocusEvent } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { ArrowLeft, ArrowRight, Phone, ShieldCheck } from "lucide-react";
+import { ArrowLeft, ArrowRight, Phone } from "lucide-react";
 import { contact, stats } from "../../data";
 import { Counter, Magnetic, motion, EASE } from "../motion";
 
@@ -112,7 +112,7 @@ export function Hero() {
         <motion.div style={{ y: contentY }} className="mx-auto w-full max-w-7xl px-4 sm:px-6">
           <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
             {/* Left Content Column */}
-            <div className="lg:col-span-8">
+            <div className="min-w-0 lg:col-span-7">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={slide.id}
@@ -124,14 +124,8 @@ export function Hero() {
                   exit={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: -8 }}
                   transition={{ duration: prefersReducedMotion ? 0 : 0.35, ease: EASE }}
                 >
-                  {/* Single Clean Tag */}
-                  <div className="inline-flex max-w-full flex-wrap items-center gap-1.5 rounded-full border border-gold-400/30 bg-gold-500/10 px-2.5 py-1 text-[9px] font-bold tracking-wide text-gold-300 uppercase backdrop-blur-md sm:px-3 sm:text-[11px] sm:tracking-wider">
-                    <ShieldCheck className="h-3.5 w-3.5 text-gold-400" />
-                    {slide.eyebrow}
-                  </div>
-
                   {/* Main Display Headline (Punchy, Short) */}
-                  <h1 className="mt-3 font-display text-[1.75rem] leading-[1.08] font-bold tracking-[-0.03em] text-white sm:text-[2.8rem] md:text-[3.2rem]">
+                  <h1 className="max-w-3xl break-words font-display text-[1.75rem] leading-[1.08] font-bold tracking-[-0.03em] text-white sm:text-[2.8rem] md:text-[3rem] xl:text-[3.4rem]">
                     {slide.before} <span className="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 to-rose-400">{slide.accent}</span>
                   </h1>
 
@@ -164,18 +158,14 @@ export function Hero() {
               </AnimatePresence>
             </div>
 
-            <div className="relative hidden min-h-[300px] items-center justify-center lg:col-span-4 lg:flex">
-              <div className="absolute right-2 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full border border-gold-300/20 bg-gold-300/[0.04] shadow-[0_0_90px_rgba(226,180,87,0.12)]" />
-              <div className="absolute right-8 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full border border-white/10" />
+            <div className="relative hidden min-h-[300px] min-w-0 items-center justify-center lg:col-span-5 lg:flex">
+              <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold-300/20 bg-gold-300/[0.04] shadow-[0_0_90px_rgba(226,180,87,0.12)]" />
+              <div className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
               <img
                 src="/images/golden-scales-and-gavel-emblem.png"
                 alt="Golden scales of justice and a judge's gavel"
-                className="relative z-10 w-full max-w-[360px] drop-shadow-[0_18px_35px_rgba(0,0,0,0.45)]"
+                className="relative z-10 w-full max-w-[360px] -translate-y-2 drop-shadow-[0_18px_35px_rgba(0,0,0,0.45)]"
               />
-              <div className="absolute bottom-5 right-0 z-20 rounded-xl border border-white/15 bg-navy-950/75 px-4 py-3 shadow-xl backdrop-blur-md">
-                <p className="text-[10px] font-bold tracking-[0.18em] text-gold-300 uppercase">Trusted legal counsel</p>
-                <p className="mt-1 text-xs text-slate-200">Advocacy grounded in experience</p>
-              </div>
             </div>
 
           </div>
